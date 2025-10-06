@@ -1,0 +1,381 @@
+/* Reset dan variabel */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2c5530;
+    --secondary: #4a7c59;
+    --accent: #8db38b;
+    --light: #e9f5e9;
+    --dark: #1a3c27;
+    --text: #333333;
+    --white: #ffffff;
+    --gray: #f8f9fa;
+    --blue: #0288d1;
+    --bluee:#636CCB;
+    --blueee:#6E8CFB;
+    --blueeee:#BBDCE5;
+    --blueeeee:#3338A0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--blue);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: var(--blueeee);
+    padding: 1rem 0;
+    margin-top: 70px;
+}
+
+.breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: var(--text);
+}
+
+/* Modul Detail */
+.modul-detail {
+    padding: 2rem 0;
+}
+
+.modul-header {
+    background: linear-gradient(135deg, var(--blue), var(--bluee));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.modul-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.modul-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.modul-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.modul-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+/* Sidebar */
+.content-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.sidebar-section {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--blueeee);
+}
+
+.sidebar-section h3 {
+    color: var(--blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light);
+}
+
+.content-list {
+    list-style: none;
+}
+
+.content-list li {
+    margin-bottom: 0.8rem;
+}
+
+.content-list a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.content-list a:hover, .content-list li.active a {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.download-list {
+    list-style: none;
+}
+
+.download-list li {
+    margin-bottom: 0.8rem;
+}
+
+.download-list a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-list a:hover {
+    color: var(--primary);
+}
+
+/* Main Content */
+.content-main {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.content-part {
+    margin-bottom: 3rem;
+}
+
+.content-part h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light);
+}
+
+.content-part h3 {
+    color: var(--primary);
+    margin: 1.5rem 0 1rem 0;
+}
+
+.content-part p {
+    margin-bottom: 1rem;
+}
+
+.content-part ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.content-part li {
+    margin-bottom: 0.5rem;
+}
+
+/* Info Box */
+.info-box {
+    background-color: var(--light);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.info-box h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Image Box */
+.image-box {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.image-caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.data-table th, .data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: var(--light);
+}
+
+.data-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light);
+}
+
+.btn-prev, .btn-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.btn-prev:hover, .btn-next:hover {
+    background-color: var(--dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    
+    .modul-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-sidebar {
+        position: static;
+    }
+    
+    .modul-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .modul-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-prev, .btn-next {
+        justify-content: center;
+    }
+}
