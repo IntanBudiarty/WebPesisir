@@ -379,3 +379,379 @@ footer {
         justify-content: center;
     }
 }
+
+ .mangrove-features-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c5d63; /* Warna hijau tua yang cocok dengan tema alam */
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Container utama untuk menampung semua kartu dalam satu baris */
+        .mangrove-card-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* Membuat semua kartu memiliki tinggi yang sama */
+            flex-wrap: wrap; /* Kartu akan turun ke bawah jika layar terlalu kecil */
+            gap: 20px; /* Jarak antar kartu */
+            margin-bottom: 30px;
+        }
+
+        /* Styling untuk setiap kartu individu */
+        .mangrove-card {
+            background-color: #f4f8f7; /* Warna latar belakang kartu yang lembut */
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 220px; /* Lebar tetap untuk setiap kartu */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
+        }
+
+        /* Efek hover untuk membuat kartu sedikit terangkat */
+        .mangrove-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Styling untuk ikon */
+        .mangrove-card .icon {
+            font-size: 3rem; /* Ukuran ikon */
+            color: #1a746b; /* Warna ikon */
+            margin-bottom: 15px;
+        }
+
+        /* Styling untuk judul kartu */
+        .mangrove-card h4 {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* Styling untuk deskripsi kartu */
+        .mangrove-card p {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.5;
+            margin: 0; /* Menghapus margin default dari paragraf */
+        }
+
+        /* CSS untuk membuat gambar responsif dan berbingkai (dari kode Anda) */
+        .image-box {
+          text-align: center;
+          margin: 20px 0;
+        }
+        .image-box img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+        .image-caption {
+          font-style: italic;
+          color: #666;
+          margin-top: 5px;
+        }
+
+        /* (Opsional) Style dasar untuk body agar terlihat rapi */
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        /* Garis pemisah antar bagian agar lebih rapi */
+        hr.section-divider {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(44, 93, 99, 0.5), rgba(0, 0, 0, 0));
+            margin: 50px 0;
+        }
+
+        /* Styling untuk model Tabel Perbandingan */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden; /* Agar border-radius terlihat di sudut tabel */
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 18px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table th {
+            background-color: #e8f3f1; /* Warna header kolom yang lembut */
+            color: #2c5d63;
+            font-size: 1.2em;
+        }
+        
+        .comparison-table td {
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Membuat baris terakhir tidak ada border bawah */
+        .comparison-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        /* Styling untuk model Tanya-Jawab (Q&A) */
+        .qa-section {
+            margin-top: 40px;
+        }
+
+        .qa-question {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c5d63;
+            margin-bottom: 10px;
+        }
+
+        .qa-answer {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        
+        .qa-answer ul {
+            list-style-type: '✅ '; /* Emoji sebagai bullet point */
+            padding-left: 20px;
+        }
+        
+        .qa-answer li {
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        /* Container untuk bagian Fungsi Ekologis */
+        .ecological-function-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #f8f9fa; /* Warna latar belakang yang sedikit berbeda */
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .ecological-function-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Container untuk setiap fungsi utama */
+        .function-block {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        /* Ikon besar di sebelah kiri */
+        .function-block .icon-large {
+            font-size: 3rem;
+            color: #1a746b; /* Warna hijau toska yang konsisten */
+            margin-right: 25px;
+            margin-top: 5px;
+        }
+
+        /* Konten teks di sebelah kanan ikon */
+        .function-block .content {
+            flex: 1;
+        }
+        
+        .function-block h4 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .function-block p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Styling untuk daftar (unordered list) */
+        .function-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .function-block li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+
+        /* Membuat checkmark custom sebelum list item */
+        .function-block li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #28a745; /* Warna hijau untuk checkmark */
+            font-weight: bold;
+        }
+        .threat-section-accordion {
+            margin-top: 40px;
+        }
+
+        .threat-section-accordion h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Tombol header untuk setiap kategori accordion */
+        .accordion-header {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 18px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.3em;
+            transition: background-color 0.4s ease;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Gaya saat tombol aktif atau di-hover */
+        .accordion-header.active, .accordion-header:hover {
+            background-color: #e8f3f1; /* Warna hijau lembut yang konsisten */
+            color: #2c5d63;
+        }
+
+        .accordion-header .icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px; /* Memberi lebar tetap agar rapi */
+            text-align: center;
+        }
+
+        /* Menambahkan ikon plus/minus di sebelah kanan */
+        .accordion-header::after {
+            content: '\002B'; /* Unicode untuk tanda plus */
+            font-size: 1.5em;
+            color: #777;
+            margin-left: auto; /* Mendorong ikon ke kanan */
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active::after {
+            content: "\2212"; /* Unicode untuk tanda minus */
+            transform: rotate(180deg);
+        }
+
+        /* Panel konten yang disembunyikan */
+        .accordion-panel {
+            padding: 0 25px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+        
+        .accordion-item:last-child .accordion-header,
+        .accordion-item:last-child .accordion-panel {
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Styling untuk konten di dalam panel */
+        .threat-item {
+            padding: 15px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .threat-item:last-child {
+            border-bottom: none;
+        }
+        .threat-item h5 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+            color: #c9302c;
+        }
+        .threat-item p {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+        /* Container untuk bagian Kebijakan Pengelolaan */
+        .policy-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #fdfdfd;
+        }
+
+        .policy-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .policy-section .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Container untuk setiap pilar kebijakan */
+        .policy-pillar {
+            display: flex;
+            align-items: flex-start;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .policy-pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Ikon di sebelah kiri */
+        .policy-pillar .icon {
+            font-size: 2.5rem;
+            color: #2c5d63; /* Warna biru kebijakan */
+            margin-right: 25px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        /* Konten teks di sebelah kanan */
+        .policy-pillar .content {
+            flex: 1;
+        }
+        
+        .policy-pillar h4 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .policy-pillar p {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+            text-align: justify;
+        }
