@@ -1,0 +1,143 @@
+
+
+/* 1. FONDASI & IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Palet Warna Baru - Lebih Cerah & Alami */
+    --primary-blue: #3a86ff; /* Biru Laut Cerah */
+    --secondary-green: #38b000; /* Hijau Mangrove */
+    --accent-yellow: #ffbe0b; /* Kuning Matahari */
+    --bg-light: #f0f8ff;    /* Biru Langit Sangat Muda */
+    --bg-white: #ffffff;
+    --text-dark: #2b2d42;    /* Abu-abu Tua */
+    --text-medium: #5c677d;
+    --border-soft: #e0f2fe;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(58, 134, 255, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 16px;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+/* 2. HEADER & LINK KEMBALI */
+header { background-color: var(--bg-white); box-shadow: var(--shadow-soft); position: sticky; top: 0; z-index: 1000; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-blue); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.back-link { color: var(--primary-blue); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 5px; font-size: 0.9em; }
+.back-link:hover { text-decoration: underline; }
+
+/* 3. HERO BANNER BARU - Lebih Ramah */
+.hero-mangrove {
+    position: relative;
+    padding: 80px 20px 100px; /* Padding bawah lebih besar untuk ombak */
+    background: linear-gradient(135deg, #80aded, #577ecc); /* Gradien Hijau */
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Sembunyikan ombak yg keluar */
+}
+/* Hapus overlay gelap */
+.hero-overlay { display: none; }
+.hero-mangrove h1 {
+    font-size: 3em; font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    position: relative; z-index: 2;
+}
+.hero-subtitle {
+    font-size: 1.3em; font-weight: 500; opacity: 0.9;
+    position: relative; z-index: 2;
+}
+/* Menambahkan elemen ombak di bawah hero */
+.hero-mangrove::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' style='fill:%23f0f8ff;'%3E%3C/path%3E%3C/svg%3E"); /* Warna sama dengan body bg */
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* 4. KONTEN UTAMA & SECTION */
+.page-content { padding: 1rem 0 4rem; } /* Kurangi padding atas */
+.content-section {
+    padding: 40px; margin-bottom: 3rem; border-radius: 16px;
+    background-color: var(--bg-white); box-shadow: var(--shadow-soft);
+    opacity: 0; transform: translateY(30px); /* Animasi */
+    border: 1px solid var(--border-color);
+}
+.content-section h2 {
+    font-size: 2em; font-weight: 600; color: var(--primary-blue);
+    margin-bottom: 1.5rem; text-align: center; display: flex;
+    align-items: center; justify-content: center; gap: 10px;
+}
+.section-content { display: flex; align-items: center; gap: 40px; margin-bottom: 1rem; }
+.section-content.reverse { flex-direction: row-reverse; }
+.content-image { width: 45%; max-width: 400px; border-radius: 12px; box-shadow: var(--shadow-medium); object-fit: cover; flex-shrink: 0; }
+.content-section p { color: var(--text-medium); margin-bottom: 1rem; font-size: 1.05em; }
+.content-section ul { list-style: none; padding-left: 0; margin-top: 1rem; }
+.content-section ul li { position: relative; padding-left: 35px; margin-bottom: 12px; font-size: 1.05em; color: var(--text-medium); }
+.content-section ul li i { position: absolute; left: 0; top: 5px; color: var(--secondary-blue
+    ); font-size: 1.2em; width: 25px; text-align: center; }
+
+/* Garis Pemisah Bergelombang */
+.section-divider {
+    border: none;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.39-16.72-168.19-17.73-250.45-.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' style='fill:%23e0f2fe;'/%3E%3C/svg%3E"); /* Warna biru sangat muda */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 1rem 0; /* Jarak lebih dekat */
+    opacity: 0.5;
+}
+
+/* 5. KARTU FITUR DENGAN DESAIN BARU */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 2rem; }
+.feature-card {
+    background-color: var(--white); border-radius: 16px; padding: 30px;
+    text-align: center; border: 2px solid var(--border-color); /* Border lebih tebal */
+    box-shadow: none; transition: all 0.3s ease;
+    position: relative; overflow: hidden; /* Untuk ikon di sudut */
+}
+.feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-medium); border-color: var(--secondary-blue); }
+/* Ikon di sudut kanan atas */
+.feature-card .icon {
+    position: absolute;
+    top: -15px; right: -15px;
+    font-size: 3rem;
+    color: var(--secondary-blue);
+    opacity: 0.15;
+    transform: rotate(15deg);
+}
+.feature-card h4 { font-size: 1.2em; color: var(--primary-blue); margin-top: 10px; margin-bottom: 10px; font-weight: 600; position: relative; z-index: 2;}
+.feature-card p { font-size: 0.9em; color: var(--text-medium); line-height: 1.6; margin-bottom: 0; position: relative; z-index: 2;}
+
+/* 6. FOOTER */
+.site-footer { background-color: #0d1b2a; color: #adb5bd; padding: 2rem 0; text-align: center; margin-top: 3rem; }
+.footer-bottom p { font-size: 0.9em; color: #adb5bd; }
+
+/* 7. ANIMASI KEYFRAME */
+@keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 8. RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-mangrove h1 { font-size: 2em; }
+    .hero-subtitle { font-size: 1em; }
+    .content-section h2 { font-size: 1.5em; }
+    .section-content, .section-content.reverse { flex-direction: column; }
+    .image-content { width: 100%; max-width: 100%; margin-bottom: 20px; }
+    .feature-grid { grid-template-columns: 1fr; }
+}

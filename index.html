@@ -9,66 +9,75 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <i class="fas fa-water"></i>
-                <span>Pesisir Nusantara</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></li>
-                <li><a href="../index.html#modul"><i class="fas fa-book"></i> Modul</a></li>
-                <li><a href="../index.html#referensi"><i class="fas fa-link"></i> Referensi</a></li>
-                <li><a href="../index.html#tentang"><i class="fas fa-info-circle"></i> Tentang</a></li>
-                <li><a href="../index.html#kontak"><i class="fas fa-envelope"></i> Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-water"></i>
+            <span>Pesisir Nusantara</span>
+        </div>
 
-    <!-- <header>
-        <nav class="navbar">
-            <div class="logo">🌊 Pesisir Nusantara</div>
+        <div class="nav-menu">
             <ul class="nav-links">
-                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="#beranda" class="active">Beranda</a></li>
                 <li><a href="#modul">Modul</a></li>
                 <li><a href="#referensi">Referensi</a></li>
                 <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#kontak">Kontak</a></li>
             </ul>
-        </nav>
-    </header> -->
+        </div>
+        
+        <button class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Pesisir Nusantara<br>Menyelami Ilmu, Menjaga Alam</h1>
-            <p>Belajar bersama menjaga pesisir untuk generasi mendatang dengan data resmi dan penelitian terkini</p>
-            
-            <div class="search-box">
-                <div class="search-tabs">
-                    <button class="tab active">Semua Modul</button>
-                    <button class="tab">Ekologi</button>
-                    <button class="tab">Geomorfologi</button>
-                    <button class="tab">Manajemen</button>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Menyelami Ilmu, Menjaga Alam</h1>
+        <p>Belajar bersama menjaga pesisir untuk generasi mendatang dengan data resmi dan penelitian terkini.</p>
+        
+        <div class="premium-showcase-wrapper">
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2>Pesisir Indonesia dalam Angka</h2>
+                    <p>Sebuah anugerah geografi yang menopang kehidupan dan menyimpan keajaiban alam tak ternilai.</p>
                 </div>
-                
-                <div class="search-inputs">
-                    <div class="input-group">
-                        <label>Topik Pembelajaran</label>
-                        <input type="text" placeholder="Pilih topik..." readonly>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-ruler-horizontal"></i></div>
+                        <h3 class="stat-number">>108.000 KM</h3>
+                        <span class="stat-label">Garis Pantai</span>
                     </div>
-                    <div class="input-group">
-                        <label>Tingkat</label>
-                        <input type="text" value="Pemula - Mahir" readonly>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-fish-fins"></i></div>
+                        <h3 class="stat-number">76%</h3>
+                        <span class="stat-label">Spesies Karang Dunia</span>
                     </div>
-                    <div class="input-group">
-                        <label>Durasi</label>
-                        <input type="text" value="1-4 Minggu" readonly>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-tree"></i></div>
+                        <h3 class="stat-number">>3,3 Juta Ha</h3>
+                        <span class="stat-label">Hutan Mangrove</span>
                     </div>
-                    <button class="search-btn">Mulai Belajar</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="hero-waves">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8f9fa" /> </g>
+        </svg>
+    </div>
+</section>
 
     <!-- Modul Section -->
     <section id="modul" class="modul-section">
@@ -134,184 +143,179 @@
 
     <!-- Kenapa Belajar Section -->
     <section class="why-learn">
-        <div class="container">
-            <h2>Mengapa Belajar Tentang Pesisir?</h2>
-            <p class="subtitle">Memahami ekosistem pesisir adalah kunci untuk masa depan Indonesia</p>
-            
-            <div class="why-content">
-                <div class="why-list">
-                    <div class="why-item">
-                        <span class="icon-badge blue">🌊</span>
-                        <div>
-                            <h3>Garis Pantai Terpanjang ke-4 di Dunia</h3>
-                            <p>Indonesia memiliki garis pantai sepanjang 99.093 km dengan kekayaan biodiversitas laut yang luar biasa</p>
-                        </div>
+    <div class="container">
+        <h2>Mengapa Belajar Tentang Pesisir?</h2>
+        <p class="subtitle">Memahami ekosistem pesisir adalah investasi untuk masa depan ekologis dan ekonomis Indonesia.</p>
+        
+        <div class="why-content">
+            <div class="why-list">
+                <div class="why-item">
+                    <div class="icon-badge"><i class="fas fa-ruler-combined"></i></div>
+                    <div>
+                        <h3>Garis Pantai Terpanjang ke-2 di Dunia</h3>
+                        <p>Dengan panjang lebih dari 108.000 km, pesisir Indonesia adalah rumah bagi kekayaan biodiversitas laut yang luar biasa.</p>
                     </div>
-                    
-                    <div class="why-item">
-                        <span class="icon-badge green">🌱</span>
-                        <div>
-                            <h3>Ekosistem Vital bagi Kehidupan</h3>
-                            <p>Pesisir menyediakan makanan, mata pencaharian, dan perlindungan bagi jutaan masyarakat Indonesia</p>
-                        </div>
-                    </div>
-                    
-                    <div class="why-item">
-                        <span class="icon-badge teal">🛡️</span>
-                        <div>
-                            <h3>Benteng Alami dari Bencana</h3>
-                            <p>Mangrove dan terumbu karang melindungi daratan dari abrasi, tsunami, dan badai tropis</p>
-                        </div>
-                    </div>
-                    
-                    <button class="explore-btn">Pelajari Lebih Lanjut</button>
                 </div>
                 
-                <div class="why-image">
-                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Pantai Indonesia">
-                    <div class="stat-card card1">
-                        <div class="stat-number">17,000+</div>
-                        <div class="stat-label">Pulau di Indonesia</div>
+                <div class="why-item">
+                    <div class="icon-badge"><i class="fas fa-users"></i></div>
+                    <div>
+                        <h3>Penopang Kehidupan Jutaan Orang</h3>
+                        <p>Pesisir menyediakan sumber makanan, mata pencaharian, dan jalur perdagangan bagi lebih dari 60 juta masyarakat Indonesia.</p>
                     </div>
-                    <div class="stat-card card2">
-                        <div class="stat-number">99,093 km</div>
-                        <div class="stat-label">Garis Pantai</div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="icon-badge"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <h3>Benteng Alami dari Bencana</h3>
+                        <p>Ekosistem mangrove dan terumbu karang yang sehat terbukti mampu melindungi daratan dari abrasi, badai, dan tsunami.</p>
                     </div>
-                    <div class="stat-card card3">
-                        <div class="stat-number">60 Juta</div>
-                        <div class="stat-label">Penduduk di Pesisir</div>
-                    </div>
+                </div>
+
+                <div class="why-summary">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Mempelajari pesisir bukan hanya tentang alam, tetapi tentang memahami fondasi bangsa maritim kita.</p>
+                </div>
+            </div>
+            
+            <div class="why-image">
+                <img src="https://images.unsplash.com/photo-1664896019718-b95b8ab9420c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=3174?w=800" alt="Pantai Indonesia dengan ombak besar">
+                <div class="stat-card card1">
+                    <div class="stat-number">17.504</div>
+                    <div class="stat-label">Pulau di Indonesia</div>
+                </div>
+                <div class="stat-card card2">
+                    <div class="stat-number">>108.000 km</div>
+                    <div class="stat-label">Total Garis Pantai</div>
+                </div>
+                <div class="stat-card card3">
+                    <div class="stat-number">76%</div>
+                    <div class="stat-label">Spesies Karang Dunia</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Ekosistem Pesisir Section -->
     <section class="ekosistem-section">
-        <div class="container">
-            <h2>Ekosistem Pesisir Indonesia</h2>
-            <p class="subtitle">Jelajahi keanekaragaman hayati yang menakjubkan di wilayah pesisir Nusantara</p>
-            
-            <div class="filter-tabs">
-                <button class="filter-btn active">Semua Ekosistem</button>
-                <button class="filter-btn">Mangrove</button>
-                <button class="filter-btn">Terumbu Karang</button>
-                <button class="filter-btn">Padang Lamun</button>
-                <button class="filter-btn">Pantai Berpasir</button>
-                <button class="filter-btn">Estuari</button>
+    <div class="container">
+        <h2>Ekosistem Pesisir Indonesia</h2>
+        <p class="subtitle">Jelajahi keanekaragaman hayati yang menakjubkan di wilayah pesisir Nusantara</p>
+        
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">Semua Ekosistem</button>
+            <button class="filter-btn" data-filter="mangrove">Mangrove</button>
+            <button class="filter-btn" data-filter="karang">Terumbu Karang</button>
+            <button class="filter-btn" data-filter="lamun">Padang Lamun</button>
+            <button class="filter-btn" data-filter="pantai">Pantai Berpasir</button>
+            <button class="filter-btn" data-filter="estuari">Estuari</button>
+        </div>
+        
+        <div class="ekosistem-grid">
+            <div class="ekosistem-card" data-category="mangrove">
+                <div class="card-image"><img src="https://satujam.com/wp-content/uploads/2016/04/hutan-mangrove.jpg?w=400" alt="Hutan Mangrove"><span class="rating">⭐ 4.9</span></div>
+                <div class="card-info"><h3>Hutan Mangrove</h3><p class="location">📍 Seluruh Nusantara</p><p class="stats">🌳 3.5 Juta Ha • 🦀 100+ Spesies</p></div>
+                <a href="EKOSISTEM/mangrove.html" class="btn-modul">Mulai Belajar</a>
             </div>
             
-            <div class="ekosistem-grid">
-                <div class="ekosistem-card">
-                    <div class="card-image">
-                        <img src="https://satujam.com/wp-content/uploads/2016/04/hutan-mangrove.jpg?w=400" alt="Hutan Mangrove">
-                        <span class="rating">⭐ 4.9</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Hutan Mangrove</h3>
-                        <p class="location">📍 Seluruh Nusantara</p>
-                        <p class="stats">🌳 3.5 Juta Ha • 🦀 100+ Spesies</p>
-                    </div>
-                </div>
-                
-                <div class="ekosistem-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=400" alt="Terumbu Karang">
-                        <span class="rating">⭐ 4.9</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Terumbu Karang</h3>
-                        <p class="location">📍 Raja Ampat, Papua</p>
-                        <p class="stats">🐠 2,500+ Spesies Ikan</p>
-                    </div>
-                </div>
-                
-                <div class="ekosistem-card">
-                    <div class="card-image">
-                        <img src="https://www.greeners.co/wp-content/uploads/2017/02/Padang-Lamun-1-min.jpg?w=400" alt="Padang Lamun">
-                        <span class="rating">⭐ 4.8</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Padang Lamun</h3>
-                        <p class="location">📍 Kepulauan Seribu</p>
-                        <p class="stats">🐢 Habitat Penyu & Dugong</p>
-                    </div>
-                </div>
-                
-                <div class="ekosistem-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Pantai Tropis">
-                        <span class="rating">⭐ 4.9</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Pantai Berpasir</h3>
-                        <p class="location">📍 Bali, Lombok, NTB</p>
-                        <p class="stats">🏖️ Habitat Burung Pantai</p>
-                    </div>
-                </div>
-                
-                <div class="ekosistem-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400" alt="Delta Sungai">
-                        <span class="rating">⭐ 4.8</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Estuari & Delta</h3>
-                        <p class="location">📍 Muara Sungai Besar</p>
-                        <p class="stats">🦐 Nursery Ground Perikanan</p>
-                    </div>
-                </div>
-                
-                <div class="ekosistem-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400" alt="Laguna">
-                        <span class="rating">⭐ 4.9</span>
-                    </div>
-                    <div class="card-info">
-                        <h3>Laguna Pesisir</h3>
-                        <p class="location">📍 Berbagai Wilayah</p>
-                        <p class="stats">🌊 Ekosistem Unik</p>
-                    </div>
-                </div>
+            <div class="ekosistem-card" data-category="karang">
+                <div class="card-image"><img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=400" alt="Terumbu Karang"><span class="rating">⭐ 4.9</span></div>
+                <div class="card-info"><h3>Terumbu Karang</h3><p class="location">📍 Raja Ampat, Papua</p><p class="stats">🐠 2,500+ Spesies Ikan</p></div>
+            </div>
+            
+            <div class="ekosistem-card" data-category="lamun">
+                <div class="card-image"><img src="https://www.greeners.co/wp-content/uploads/2017/02/Padang-Lamun-1-min.jpg?w=400" alt="Padang Lamun"><span class="rating">⭐ 4.8</span></div>
+                <div class="card-info"><h3>Padang Lamun</h3><p class="location">📍 Kepulauan Seribu</p><p class="stats">🐢 Habitat Penyu & Dugong</p></div>
+            </div>
+            
+            <div class="ekosistem-card" data-category="pantai">
+                <div class="card-image"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Pantai Tropis"><span class="rating">⭐ 4.9</span></div>
+                <div class="card-info"><h3>Pantai Berpasir</h3><p class="location">📍 Bali, Lombok, NTB</p><p class="stats">🏖️ Habitat Burung Pantai</p></div>
+            </div>
+            
+            <div class="ekosistem-card" data-category="estuari">
+                <div class="card-image"><img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400" alt="Delta Sungai"><span class="rating">⭐ 4.8</span></div>
+                <div class="card-info"><h3>Estuari & Delta</h3><p class="location">📍 Muara Sungai Besar</p><p class="stats">🦐 Nursery Ground Perikanan</p></div>
+            </div>
+            
+            <div class="ekosistem-card" data-category="lainnya"> <div class="card-image"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400" alt="Laguna"><span class="rating">⭐ 4.9</span></div>
+                <div class="card-info"><h3>Laguna Pesisir</h3><p class="location">📍 Berbagai Wilayah</p><p class="stats">🌊 Ekosistem Unik</p></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Lokasi Pembelajaran Section -->
     <section class="lokasi-section">
-        <div class="container">
-            <h2>Lokasi Pembelajaran Lapangan</h2>
-            <p class="subtitle">Kunjungi kawasan konservasi pesisir terbaik Indonesia</p>
-            
-            <div class="lokasi-grid">
+    <div class="container">
+        <h2>Lokasi Pembelajaran Lapangan</h2>
+        <p class="subtitle">Kunjungi dan pelajari langsung kawasan konservasi pesisir terbaik di Indonesia</p>
+        
+        <div class="carousel-wrapper">
+            <div class="lokasi-carousel">
                 <div class="lokasi-card">
                     <img src="https://wallpapercave.com/wp/wp4190819.jpg?w=400" alt="Raja Ampat">
-                    <h3>RAJA AMPAT</h3>
-                    <p>Papua Barat</p>
+                    <div class="card-content"><h3>RAJA AMPAT</h3><p><i class="fas fa-map-marker-alt"></i> Papua Barat</p></div>
                 </div>
                 <div class="lokasi-card">
-                    <img src="https://4.bp.blogspot.com/-l65mzz1V5Ho/UwOlBrRWoKI/AAAAAAAAALE/OqNeAnM289I/s1600/Indonesia-North-Sulawesi-Bunaken-Manado-Tua-Reef-011-1200x800.jpg?w=400" alt="Bunaken">
-                    <h3>BUNAKEN</h3>
-                    <p>Sulawesi Utara</p>
+                    <img src="https://tn-bunaken.com/wp-content/uploads/2021/03/Pulau-2BBunaken.jpeg?w=400" alt="Bunaken">
+                    <div class="card-content"><h3>BUNAKEN</h3><p><i class="fas fa-map-marker-alt"></i> Sulawesi Utara</p></div>
                 </div>
                 <div class="lokasi-card">
                     <img src="https://www.indonesia-tourism.com/blog/wp-content/uploads/2020/01/karimunjawa.journey_53618878_426573601219611_5166521960828595687_n-1024x683-1.jpg?w=400" alt="Karimunjawa">
-                    <h3>KARIMUNJAWA</h3>
-                    <p>Jawa Tengah</p>
+                    <div class="card-content"><h3>KARIMUNJAWA</h3><p><i class="fas fa-map-marker-alt"></i> Jawa Tengah</p></div>
                 </div>
                 <div class="lokasi-card">
-                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400" alt="Wakatobi">
-                    <h3>WAKATOBI</h3>
-                    <p>Sulawesi Tenggara</p>
+                    <img src="https://www.wakatobi.com/wp-content/uploads/2024/01/2023_wakatobi_aerial-1024x683.webp?w=400" alt="Wakatobi">
+                    <div class="card-content"><h3>WAKATOBI</h3><p><i class="fas fa-map-marker-alt"></i> Sulawesi Tenggara</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://indonesiajuara.asia/wp-content/uploads/2024/12/Pulau-Padar-di-Taman-Nasional-Komodo-_-IndonesiaJuara-Trip_11zon.webp?w=400" alt="Taman Nasional Komodo">
+                    <div class="card-content"><h3>TN KOMODO</h3><p><i class="fas fa-map-marker-alt"></i> Nusa Tenggara Timur</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://cdn.rri.co.id/berita/Samarinda/o/1715568689711-Pulau-Derawan-696x365/5s4so5tqmhwsx9b.jpeg?w=400" alt="Kepulauan Derawan">
+                    <div class="card-content"><h3>KEP. DERAWAN</h3><p><i class="fas fa-map-marker-alt"></i> Kalimantan Timur</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://mediaim.expedia.com/destination/1/faa4b671cba99b990be4eae3fc9302cc.jpg?w=400" alt="Gili Trawangan">
+                    <div class="card-content"><h3>GILI TRAWANGAN</h3><p><i class="fas fa-map-marker-alt"></i> Nusa Tenggara Barat</p></div>
+                </div>
+                
+                <div class="lokasi-card">
+                    <img src="https://wallpapercave.com/wp/wp4190819.jpg?w=400" alt="Raja Ampat">
+                    <div class="card-content"><h3>RAJA AMPAT</h3><p><i class="fas fa-map-marker-alt"></i> Papua Barat</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://tn-bunaken.com/wp-content/uploads/2021/03/Pulau-2BBunaken.jpeg?w=400" alt="Bunaken">
+                    <div class="card-content"><h3>BUNAKEN</h3><p><i class="fas fa-map-marker-alt"></i> Sulawesi Utara</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://www.indonesia-tourism.com/blog/wp-content/uploads/2020/01/karimunjawa.journey_53618878_426573601219611_5166521960828595687_n-1024x683-1.jpg?w=400" alt="Karimunjawa">
+                    <div class="card-content"><h3>KARIMUNJAWA</h3><p><i class="fas fa-map-marker-alt"></i> Jawa Tengah</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://www.wakatobi.com/wp-content/uploads/2024/01/2023_wakatobi_aerial-1024x683.webp?w=400" alt="Wakatobi">
+                    <div class="card-content"><h3>WAKATOBI</h3><p><i class="fas fa-map-marker-alt"></i> Sulawesi Tenggara</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://indonesiajuara.asia/wp-content/uploads/2024/12/Pulau-Padar-di-Taman-Nasional-Komodo-_-IndonesiaJuara-Trip_11zon.webp?w=400" alt="Taman Nasional Komodo">
+                    <div class="card-content"><h3>TN KOMODO</h3><p><i class="fas fa-map-marker-alt"></i> Nusa Tenggara Timur</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://cdn.rri.co.id/berita/Samarinda/o/1715568689711-Pulau-Derawan-696x365/5s4so5tqmhwsx9b.jpeg?w=400" alt="Kepulauan Derawan">
+                    <div class="card-content"><h3>KEP. DERAWAN</h3><p><i class="fas fa-map-marker-alt"></i> Kalimantan Timur</p></div>
+                </div>
+                <div class="lokasi-card">
+                    <img src="https://mediaim.expedia.com/destination/1/faa4b671cba99b990be4eae3fc9302cc.jpg?w=400" alt="Gili Trawangan">
+                    <div class="card-content"><h3>GILI TRAWANGAN</h3><p><i class="fas fa-map-marker-alt"></i> Nusa Tenggara Barat</p></div>
                 </div>
             </div>
-            
-            <div class="pagination">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Referensi Section -->
     <section id="referensi" class="referensi-section">
@@ -350,9 +354,9 @@
                     <p>Dokumentasi dan informasi hukum nasional</p>
                 </a>
                 
-                <a href="#" target="_blank" class="ref-card">
+                <a href="https://scholar.google.com/scholar?hl=id&as_sdt=0%2C5&q=ekosistem+pesisir&btnG=" target="_blank" class="ref-card">
                     <div class="ref-icon">🎓</div>
-                    <h3>Jurnal Ilmiah</h3>
+                    <h3>Google Scholar </h3>
                     <p>Penelitian terkini tentang ekosistem pesisir</p>
                 </a>
             </div>
@@ -389,129 +393,117 @@
                 </div>
                 
                 <div class="tentang-image">
-                    <img src="https://images.unsplash.com/photo-1583736902626-e6a6e7d8f2e0?w=500" alt="Konservasi Pesisir">
+                    <img src="https://images.unsplash.com/photo-1758155496344-597f81bfefcd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=3540?w=500" alt="Konservasi Pesisir">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Kontak Section -->
-    <section id="kontak" class="kontak-section">
-        <div class="container">
-            <div class="kontak-header">
-                <h2>Hubungi Kami</h2>
-                <p class="subtitle">Ada pertanyaan atau saran? Kami siap membantu!</p>
-            </div>
-            
-            <div class="kontak-content">
-                <form id="contactform" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Nama Lengkap</label>
-                            <input type="text" id="name" placeholder="Masukkan nama Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="email" placeholder="email@contoh.com" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Subjek</label>
-                        <input type="text" id="subject" placeholder="Topik pesan Anda" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Pesan</label>
-                        <textarea id="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Kirim Pesan</button>
-                </form>
-                
-                <div class="contact-info">
-                    <div class="info-item">
-                        <div class="info-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@pesisinusantara.id</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">📱</div>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>+62 812-3456-7890</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div>
-                            <h4>Lokasi</h4>
-                            <p>Jakarta, Indonesia</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>🌊 Pesisir Nusantara</h3>
-                    <p>Platform edukasi pesisir berbasis data untuk menjaga kelestarian ekosistem pesisir Indonesia</p>
-                    <div class="social-links">
-                        <a href="#">f</a>
-                        <a href="#">in</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📷</a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Pembelajaran</h4>
-                    <a href="#modul">Modul Belajar</a>
-                    <a href="#referensi">Referensi</a>
-                    <a href="#">Video Tutorial</a>
-                    <a href="#">E-Book</a>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Tentang</h4>
-                    <a href="#tentang">Tentang Kami</a>
-                    <a href="#">Tim Kami</a>
-                    <a href="#">Mitra</a>
-                    <a href="#">Blog</a>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Bantuan</h4>
-                    <a href="#kontak">Kontak</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat & Ketentuan</a>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Dapatkan update terbaru tentang konservasi pesisir Indonesia</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Email Anda">
-                        <button>→</button>
-                    </div>
+    <footer class="site-footer">
+    <div class="footer-waves">
+        <section id="quote" class="quote-section">
+</section>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="footer-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#footer-wave" x="48" y="7" fill="#0d1b2a" /> </g>
+        </svg>
+    </div>
+
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col about">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-water"></i> Pesisir Nusantara
+                </a>
+                <p>Platform edukasi pesisir berbasis data untuk menjaga kelestarian ekosistem pesisir Indonesia.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pesisir Nusantara. Semua hak dilindungi.</p>
+
+            <div class="footer-col links">
+                <h3>Pembelajaran</h3>
+                <ul>
+                    <li><a href="#">Modul Belajar</a></li>
+                    <li><a href="#">Referensi</a></li>
+                    <li><a href="#">Video Tutorial</a></li>
+                    <li><a href="#">E-Book</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col links">
+                <h3>Bantuan</h3>
+                <ul>
+                    <li><a href="#">Kontak</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h3>Newsletter</h3>
+                <p>Dapatkan update terbaru tentang konservasi pesisir Indonesia.</p>
+                
             </div>
         </div>
-    </footer>
 
-    <script src="index.js"></script>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pesisir Nusantara. Semua Hak Dilindungi.</p>
+        </div>
+    </div>
+</footer>
+    <script>
+        const themeSwitch = document.getElementById('checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeSwitch.checked = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeSwitch.checked = false;
+            }
+        }
+
+        if (currentTheme) {
+            setTheme(currentTheme);
+        }
+
+        themeSwitch.addEventListener('change', function(event) {
+            let theme = event.target.checked ? 'dark' : 'light';
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', theme);
+        });
+
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // (Opsional) Tutup menu saat link di-klik
+        document.querySelectorAll(".nav-links li a").forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+
+</script>
+
 </body>
 </html>

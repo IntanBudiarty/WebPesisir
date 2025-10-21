@@ -1,32 +1,37 @@
-/* Reset dan variabel */
+/*
+===================================================================
+--- KODE CSS FINAL UNTUK TAMPILAN MODUL YANG MODERN & RAPI ---
+===================================================================
+*/
+
+/* 1. FONDASI: FONT, WARNA, & PENGATURAN DASAR */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #1e3a5f;      /* Biru Tua Elegan */
+    --secondary: #2575fc;   /* Biru Terang untuk Aksen */
+    --accent: #6a11cb;       /* Ungu untuk Gradien */
+    --light-bg: #f8f9fa;     /* Latar Belakang Utama */
+    --light-blue-bg: #eaf2ff;/* Latar Belakang Info Box */
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-light: #555;
+    --border-color: #e0e7ff;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #2c5530;
-    --secondary: #4a7c59;
-    --accent: #8db38b;
-    --light: #e9f5e9;
-    --dark: #1a3c27;
-    --text: #333333;
-    --white: #ffffff;
-    --gray: #f8f9fa;
-    --blue: #0288d1;
-    --bluee:#636CCB;
-    --blueee:#6E8CFB;
-    --blueeee:#BBDCE5;
-    --blueeeee:#3338A0;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--gray);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
 }
 
 .container {
@@ -35,242 +40,247 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+
+/* 2. HEADER, NAVBAR, & BREADCRUMB */
 header {
     background-color: var(--white);
-    box-shadow: var(--shadow);
-    position: fixed;
+    box-shadow: var(--shadow-soft);
+    position: sticky;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
 }
-
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--blue);
+    color: var(--primary);
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
-.logo i {
-    font-size: 1.8rem;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--blue);
-}
-
-/* Breadcrumb */
 .breadcrumb {
-    background-color: var(--blueeee);
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
-    margin-top: 70px;
+    margin-top: 70px; /* Sesuaikan dengan tinggi header Anda */
 }
-
 .breadcrumb a {
-    color: var(--blue);
+    color: var(--secondary);
     text-decoration: none;
 }
 
-.breadcrumb span {
-    color: var(--text);
-}
 
-/* Modul Detail */
+/* 3. LAYOUT UTAMA MODUL (HEADER & KONTEN) */
 .modul-detail {
     padding: 2rem 0;
 }
-
 .modul-header {
-    background: linear-gradient(135deg, var(--blue), var(--bluee));
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
     color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem;
+    border-radius: 12px;
     margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(37, 117, 252, 0.2);
 }
-
 .modul-header h1 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
 }
-
-.modul-meta {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.modul-meta span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
 .modul-content {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 2rem;
 }
+.content-main {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-soft);
+}
 
-/* Sidebar */
+
+/* 4. SIDEBAR */
 .content-sidebar {
     position: sticky;
     top: 100px;
     height: fit-content;
 }
-
 .sidebar-section {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    box-shadow: var(--blueeee);
+    border: 1px solid var(--border-color);
 }
-
 .sidebar-section h3 {
-    color: var(--blue);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--light);
-}
-
-.content-list {
-    list-style: none;
-}
-
-.content-list li {
-    margin-bottom: 0.8rem;
-}
-
-.content-list a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.3s;
-    display: block;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-
-.content-list a:hover, .content-list li.active a {
-    background-color: var(--light);
     color: var(--primary);
+    margin-bottom: 1rem;
 }
-
-.download-list {
+.content-list, .download-list {
     list-style: none;
 }
-
-.download-list li {
-    margin-bottom: 0.8rem;
-}
-
-.download-list a {
-    color: var(--text);
+.content-list li a {
+    color: var(--text-light);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.content-list li.active a, .content-list li a:hover {
+    background-color: var(--light-blue-bg);
+    color: var(--secondary);
+    transform: translateX(5px);
+}
+.download-list a {
+    color: var(--text-dark);
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 0.5rem 0;
 }
-
 .download-list a:hover {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
-/* Main Content */
-.content-main {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-}
 
+/* 5. KONTEN UTAMA YANG SUDAH DIPERBAGUS */
 .content-part {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
 }
-
 .content-part h2 {
+    font-size: 2em;
+    font-weight: 700;
     color: var(--primary);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--light);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, var(--secondary), var(--accent)) 1;
 }
-
+.content-part h2 + p, .content-part p {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
 .content-part h3 {
     color: var(--primary);
-    margin: 1.5rem 0 1rem 0;
+    margin: 2rem 0 1rem 0;
 }
 
-.content-part p {
-    margin-bottom: 1rem;
-}
-
-.content-part ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.content-part li {
-    margin-bottom: 0.5rem;
-}
-
-/* Info Box */
+/* KOTAK INFO */
 .info-box {
-    background-color: var(--light);
-    border-left: 4px solid var(--primary);
-    padding: 1.5rem;
-    margin: 1.5rem 0;
+    background-color: var(--light-blue-bg);
+    border-left: 5px solid var(--secondary);
+    padding: 20px;
+    margin: 30px 0;
     border-radius: 0 8px 8px 0;
 }
 
-.info-box h4 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* DAFTAR UL */
+.content-part ul {
+    list-style: none;
+    padding-left: 0;
+}
+.content-part ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+}
+.content-part ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-/* Image Box */
+/* TABEL DATA */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--shadow-medium);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table thead {
+    background: linear-gradient(to right, var(--secondary), var(--accent));
+    color: white;
+}
+.data-table tbody tr:nth-child(even) {
+    background-color: #fbfdff;
+}
+
+/* KARTU-KARTU INFORMASI (MANGROVE, DLL) */
+.mangrove-features-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.mangrove-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.mangrove-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mangrove-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+.mangrove-card .icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+.mangrove-card h4 {
+    font-size: 1.1em;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* GAMBAR & CAPTION */
 .image-box {
     margin: 1.5rem 0;
     text-align: center;
 }
-
 .image-box img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
 }
-
 .image-caption {
     font-style: italic;
     color: #666;
@@ -278,480 +288,58 @@ header {
     font-size: 0.9rem;
 }
 
-/* Table */
-.data-table {
+/* ACCORDION */
+.accordion-item {
+    margin-bottom: 10px;
+}
+.accordion-header {
+    background-color: #fbfdff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    box-shadow: var(--shadow);
-}
-
-.data-table th, .data-table td {
-    padding: 1rem;
+    padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
-.data-table th {
-    background-color: var(--primary);
-    color: var(--white);
-    font-weight: 600;
+.accordion-header.active, .accordion-header:hover {
+    background-color: var(--light-blue-bg);
+    color: var(--primary);
 }
-
-.data-table tr:nth-child(even) {
-    background-color: var(--light);
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px;
 }
-
-.data-table tr:hover {
-    background-color: #e0e0e0;
+.threat-item {
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee;
 }
+.threat-item:last-child { border-bottom: none; }
 
-/* Navigation Buttons */
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--light);
-}
 
-.btn-prev, .btn-next {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--primary);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-weight: 500;
-}
-
-.btn-prev:hover, .btn-next:hover {
-    background-color: var(--dark);
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
+/* 6. ANIMASI & RESPONSIVE */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    
-    .nav-links {
-        margin-top: 1rem;
-        gap: 1rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
+}
+#bagian1 { animation-delay: 0.1s; }
+#bagian2, #bagian3, #bagian4, #bagian5, #bagian6 { animation-delay: 0.2s; }
+
+@media (max-width: 992px) {
     .modul-content {
         grid-template-columns: 1fr;
     }
-    
     .content-sidebar {
         position: static;
     }
-    
-    .modul-header h1 {
-        font-size: 1.8rem;
-    }
-    
-    .modul-meta {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .navigation-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .btn-prev, .btn-next {
-        justify-content: center;
-    }
 }
-
- .mangrove-features-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #2c5d63; /* Warna hijau tua yang cocok dengan tema alam */
-            margin-top: 30px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* Container utama untuk menampung semua kartu dalam satu baris */
-        .mangrove-card-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch; /* Membuat semua kartu memiliki tinggi yang sama */
-            flex-wrap: wrap; /* Kartu akan turun ke bawah jika layar terlalu kecil */
-            gap: 20px; /* Jarak antar kartu */
-            margin-bottom: 30px;
-        }
-
-        /* Styling untuk setiap kartu individu */
-        .mangrove-card {
-            background-color: #f4f8f7; /* Warna latar belakang kartu yang lembut */
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            width: 220px; /* Lebar tetap untuk setiap kartu */
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
-        }
-
-        /* Efek hover untuk membuat kartu sedikit terangkat */
-        .mangrove-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        /* Styling untuk ikon */
-        .mangrove-card .icon {
-            font-size: 3rem; /* Ukuran ikon */
-            color: #1a746b; /* Warna ikon */
-            margin-bottom: 15px;
-        }
-
-        /* Styling untuk judul kartu */
-        .mangrove-card h4 {
-            font-size: 1.1em;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        /* Styling untuk deskripsi kartu */
-        .mangrove-card p {
-            font-size: 0.9em;
-            color: #555;
-            line-height: 1.5;
-            margin: 0; /* Menghapus margin default dari paragraf */
-        }
-
-        /* CSS untuk membuat gambar responsif dan berbingkai (dari kode Anda) */
-        .image-box {
-          text-align: center;
-          margin: 20px 0;
-        }
-        .image-box img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 10px;
-        }
-        .image-caption {
-          font-style: italic;
-          color: #666;
-          margin-top: 5px;
-        }
-
-        /* (Opsional) Style dasar untuk body agar terlihat rapi */
-        body {
-            font-family: sans-serif;
-            padding: 20px;
-        }
-        /* Garis pemisah antar bagian agar lebih rapi */
-        hr.section-divider {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(44, 93, 99, 0.5), rgba(0, 0, 0, 0));
-            margin: 50px 0;
-        }
-
-        /* Styling untuk model Tabel Perbandingan */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border-radius: 10px;
-            overflow: hidden; /* Agar border-radius terlihat di sudut tabel */
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 18px;
-            text-align: left;
-            vertical-align: top;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .comparison-table th {
-            background-color: #e8f3f1; /* Warna header kolom yang lembut */
-            color: #2c5d63;
-            font-size: 1.2em;
-        }
-        
-        .comparison-table td {
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Membuat baris terakhir tidak ada border bawah */
-        .comparison-table tr:last-child td {
-            border-bottom: 0;
-        }
-
-        /* Styling untuk model Tanya-Jawab (Q&A) */
-        .qa-section {
-            margin-top: 40px;
-        }
-
-        .qa-question {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #2c5d63;
-            margin-bottom: 10px;
-        }
-
-        .qa-answer {
-            font-size: 1em;
-            line-height: 1.7;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 30px;
-        }
-        
-        .qa-answer ul {
-            list-style-type: '✅ '; /* Emoji sebagai bullet point */
-            padding-left: 20px;
-        }
-        
-        .qa-answer li {
-            padding-left: 10px;
-            margin-bottom: 10px;
-        }
-        /* Container untuk bagian Fungsi Ekologis */
-        .ecological-function-section {
-            margin-top: 40px;
-            padding: 30px;
-            background-color: #f8f9fa; /* Warna latar belakang yang sedikit berbeda */
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .ecological-function-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* Container untuk setiap fungsi utama */
-        .function-block {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        /* Ikon besar di sebelah kiri */
-        .function-block .icon-large {
-            font-size: 3rem;
-            color: #1a746b; /* Warna hijau toska yang konsisten */
-            margin-right: 25px;
-            margin-top: 5px;
-        }
-
-        /* Konten teks di sebelah kanan ikon */
-        .function-block .content {
-            flex: 1;
-        }
-        
-        .function-block h4 {
-            font-size: 1.4em;
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        
-        .function-block p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        /* Styling untuk daftar (unordered list) */
-        .function-block ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .function-block li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-        }
-
-        /* Membuat checkmark custom sebelum list item */
-        .function-block li::before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            color: #28a745; /* Warna hijau untuk checkmark */
-            font-weight: bold;
-        }
-        .threat-section-accordion {
-            margin-top: 40px;
-        }
-
-        .threat-section-accordion h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* Tombol header untuk setiap kategori accordion */
-        .accordion-header {
-            background-color: #f1f1f1;
-            color: #444;
-            cursor: pointer;
-            padding: 18px 20px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.3em;
-            transition: background-color 0.4s ease;
-            display: flex;
-            align-items: center;
-            border-top: 1px solid #ddd;
-        }
-
-        /* Gaya saat tombol aktif atau di-hover */
-        .accordion-header.active, .accordion-header:hover {
-            background-color: #e8f3f1; /* Warna hijau lembut yang konsisten */
-            color: #2c5d63;
-        }
-
-        .accordion-header .icon {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            width: 30px; /* Memberi lebar tetap agar rapi */
-            text-align: center;
-        }
-
-        /* Menambahkan ikon plus/minus di sebelah kanan */
-        .accordion-header::after {
-            content: '\002B'; /* Unicode untuk tanda plus */
-            font-size: 1.5em;
-            color: #777;
-            margin-left: auto; /* Mendorong ikon ke kanan */
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-header.active::after {
-            content: "\2212"; /* Unicode untuk tanda minus */
-            transform: rotate(180deg);
-        }
-
-        /* Panel konten yang disembunyikan */
-        .accordion-panel {
-            padding: 0 25px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            border-left: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-        }
-        
-        .accordion-item:last-child .accordion-header,
-        .accordion-item:last-child .accordion-panel {
-            border-bottom: 1px solid #ddd;
-        }
-
-        /* Styling untuk konten di dalam panel */
-        .threat-item {
-            padding: 15px 0;
-            border-bottom: 1px dashed #eee;
-        }
-        .threat-item:last-child {
-            border-bottom: none;
-        }
-        .threat-item h5 {
-            margin: 0 0 5px 0;
-            font-size: 1.1em;
-            color: #c9302c;
-        }
-        .threat-item p {
-            margin: 0;
-            line-height: 1.6;
-            color: #555;
-            text-align: justify;
-        }
-        /* Container untuk bagian Kebijakan Pengelolaan */
-        .policy-section {
-            margin-top: 40px;
-            padding: 30px;
-            background-color: #fdfdfd;
-        }
-
-        .policy-section h2 {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .policy-section .intro-text {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            font-size: 1.1em;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Container untuk setiap pilar kebijakan */
-        .policy-pillar {
-            display: flex;
-            align-items: flex-start;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .policy-pillar:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Ikon di sebelah kiri */
-        .policy-pillar .icon {
-            font-size: 2.5rem;
-            color: #2c5d63; /* Warna biru kebijakan */
-            margin-right: 25px;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        /* Konten teks di sebelah kanan */
-        .policy-pillar .content {
-            flex: 1;
-        }
-        
-        .policy-pillar h4 {
-            font-size: 1.4em;
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        
-        .policy-pillar p {
-            font-size: 1em;
-            line-height: 1.7;
-            color: #555;
-            margin: 0;
-            text-align: justify;
-        }
