@@ -1,143 +1,493 @@
-
+/*
+=========================================================
+--- CSS UNTUK HALAMAN MANGROVE (TEMA MODUL) ---
+=========================================================
+*/
 
 /* 1. FONDASI & IMPORT FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Palet Warna Baru - Lebih Cerah & Alami */
-    --primary-blue: #3a86ff; /* Biru Laut Cerah */
-    --secondary-green: #38b000; /* Hijau Mangrove */
-    --accent-yellow: #ffbe0b; /* Kuning Matahari */
-    --bg-light: #f0f8ff;    /* Biru Langit Sangat Muda */
-    --bg-white: #ffffff;
-    --text-dark: #2b2d42;    /* Abu-abu Tua */
-    --text-medium: #5c677d;
-    --border-soft: #e0f2fe;
+    /* Palet Warna - Sesuai Tema Modul */
+    --primary: #1e3a5f;
+    --secondary: #2575fc;
+    --accent-green: #28a745;
+    --light-bg: #f8f9fa;
+    --alt-bg: #ffffff; /* Latar Belakang Alternatif */
+    --white: #ffffff;
+    --text-dark: #344054;
+    --text-medium: #667085;
+    --text-light: #a0aec0;
+    --border-soft: #eef2f7;
     --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
-    --shadow-medium: 0 8px 25px rgba(58, 134, 255, 0.15);
+    --shadow-medium: 0 10px 30px rgba(37, 117, 252, 0.12);
+    --blue-bg-light: #eaf2ff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-light);
+    background-color: var(--light-bg);
     color: var(--text-dark);
     line-height: 1.7;
     font-size: 16px;
-    overflow-x: hidden; /* Mencegah scroll horizontal */
+    overflow-x: hidden;
 }
 .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-/* 2. HEADER & LINK KEMBALI */
-header { background-color: var(--bg-white); box-shadow: var(--shadow-soft); position: sticky; top: 0; z-index: 1000; }
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
-.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-blue); display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.back-link { color: var(--primary-blue); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 5px; font-size: 0.9em; }
-.back-link:hover { text-decoration: underline; }
+/* 2. HEADER & LINK KEMBALI (Mirip Modul Detail) */
+header { background-color: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 5%; max-width: 1200px; margin: 0 auto; height: 70px; }
+.logo { font-size: 1.4rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.logo i { color: var(--secondary); }
+.back-link { color: var(--secondary); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px; font-size: 0.9em; padding: 8px 16px; border: 1px solid var(--border-soft); border-radius: 20px; transition: all 0.3s ease; }
+.back-link:hover { background-color: var(--blue-bg-light); border-color: transparent; }
 
-/* 3. HERO BANNER BARU - Lebih Ramah */
-.hero-mangrove {
-    position: relative;
-    padding: 80px 20px 100px; /* Padding bawah lebih besar untuk ombak */
-    background: linear-gradient(135deg, #80aded, #577ecc); /* Gradien Hijau */
-    color: white;
-    text-align: center;
-    overflow: hidden; /* Sembunyikan ombak yg keluar */
+/* 3. HERO SECTION - Gaya Mirip Header Modul */
+.hero-mangrove-themed {
+    background: linear-gradient(135deg, var(--secondary), #1c5ab5); /* Gradien Biru */
+    color: var(--white);
+    padding: 3rem 20px;
+    border-radius: 0 0 20px 20px; /* Sudut tumpul di bawah */
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(37, 117, 252, 0.2);
 }
-/* Hapus overlay gelap */
-.hero-overlay { display: none; }
-.hero-mangrove h1 {
-    font-size: 3em; font-weight: 700;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin-bottom: 10px;
-    position: relative; z-index: 2;
+.hero-container { max-width: 800px; margin: 0 auto; text-align: center; }
+.hero-badge {
+    display: inline-block; background-color: rgba(255,255,255,0.2);
+    padding: 5px 15px; border-radius: 15px; font-size: 0.8em;
+    margin-bottom: 1rem; font-weight: 500;
 }
-.hero-subtitle {
-    font-size: 1.3em; font-weight: 500; opacity: 0.9;
-    position: relative; z-index: 2;
-}
-/* Menambahkan elemen ombak di bawah hero */
-.hero-mangrove::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0; height: 80px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' style='fill:%23f0f8ff;'%3E%3C/path%3E%3C/svg%3E"); /* Warna sama dengan body bg */
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
+.hero-mangrove-themed h1 { font-size: 2.5em; margin-bottom: 0.5rem; }
+.hero-mangrove-themed p { font-size: 1.1em; opacity: 0.9; }
 
 /* 4. KONTEN UTAMA & SECTION */
-.page-content { padding: 1rem 0 4rem; } /* Kurangi padding atas */
+.page-content { padding-bottom: 4rem; }
 .content-section {
-    padding: 40px; margin-bottom: 3rem; border-radius: 16px;
-    background-color: var(--bg-white); box-shadow: var(--shadow-soft);
-    opacity: 0; transform: translateY(30px); /* Animasi */
-    border: 1px solid var(--border-color);
+    padding: 40px; margin-bottom: 2.5rem; border-radius: 16px; position: relative;
+    opacity: 0; transform: translateY(30px); 
 }
-.content-section h2 {
-    font-size: 2em; font-weight: 600; color: var(--primary-blue);
-    margin-bottom: 1.5rem; text-align: center; display: flex;
-    align-items: center; justify-content: center; gap: 10px;
-}
-.section-content { display: flex; align-items: center; gap: 40px; margin-bottom: 1rem; }
-.section-content.reverse { flex-direction: row-reverse; }
-.content-image { width: 45%; max-width: 400px; border-radius: 12px; box-shadow: var(--shadow-medium); object-fit: cover; flex-shrink: 0; }
-.content-section p { color: var(--text-medium); margin-bottom: 1rem; font-size: 1.05em; }
-.content-section ul { list-style: none; padding-left: 0; margin-top: 1rem; }
-.content-section ul li { position: relative; padding-left: 35px; margin-bottom: 12px; font-size: 1.05em; color: var(--text-medium); }
-.content-section ul li i { position: absolute; left: 0; top: 5px; color: var(--secondary-blue
-    ); font-size: 1.2em; width: 25px; text-align: center; }
+/* Selang-seling warna latar */
+.content-section:nth-child(odd) { background-color: var(--bg-white); border: 1px solid var(--border-soft); box-shadow: var(--shadow-soft); }
+.content-section:nth-child(even) { background-color: var(--blue-bg-light); border: 1px solid #dbe9ff;} /* Latar biru muda */
 
-/* Garis Pemisah Bergelombang */
-.section-divider {
-    border: none;
-    height: 50px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.39-16.72-168.19-17.73-250.45-.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' style='fill:%23e0f2fe;'/%3E%3C/svg%3E"); /* Warna biru sangat muda */
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 1rem 0; /* Jarak lebih dekat */
-    opacity: 0.5;
+.section-header { text-align: center; margin-bottom: 1.5rem; }
+.section-header h2 {
+    font-size: 1.8em; font-weight: 600; color: var(--primary); margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.section-divider { width: 60px; height: 3px; background: linear-gradient(to right, var(--secondary), var(--accent)); margin: 0 auto; border-radius: 3px; }
+.section-intro { font-size: 1.05em; color: var(--text-medium); max-width: 700px; margin: 1rem auto 1.5rem; text-align: center; }
+.two-column-layout {
+    display: flex;         
+    flex-wrap: nowrap;     
+    flex-direction: column;  
+    align-items: flex-start;
+    gap: 40px;          
+    width: 100%;            
+}
+.two-column-layout.reverse {
+    flex-direction: row-reverse; 
 }
 
-/* 5. KARTU FITUR DENGAN DESAIN BARU */
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 2rem; }
+/* 5. KARTU FITUR (CIRI KHAS) */
+.feature-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 1.5rem; }
 .feature-card {
-    background-color: var(--white); border-radius: 16px; padding: 30px;
-    text-align: center; border: 2px solid var(--border-color); /* Border lebih tebal */
-    box-shadow: none; transition: all 0.3s ease;
-    position: relative; overflow: hidden; /* Untuk ikon di sudut */
+    background-color: var(--bg-white); border-radius: 12px; padding: 25px;
+    text-align: center; border: 1px solid var(--border-soft); box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-medium); border-color: var(--secondary-blue); }
-/* Ikon di sudut kanan atas */
-.feature-card .icon {
-    position: absolute;
-    top: -15px; right: -15px;
-    font-size: 3rem;
-    color: var(--secondary-blue);
-    opacity: 0.15;
-    transform: rotate(15deg);
+.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); }
+.feature-card .card-icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+.feature-card h4 { font-size: 1.1em; color: var(--primary); margin-bottom: 8px; font-weight: 600; }
+.feature-card p { font-size: 0.9em; color: var(--text-medium); line-height: 1.6; margin-bottom: 0; }
+
+/* 6. DAFTAR MANFAAT */
+.benefit-list li { font-size: 1.05em; color: var(--text-medium); }
+.benefit-list li strong { color: var(--primary); font-weight: 600; }
+
+/* 7. AJAKAN MENJAGA (CALL TO ACTION) */
+.call-to-action { background-color: var(--accent-green); color: white; border: none; box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2); }
+.call-to-action h2 { color: hsla(233, 97%, 42%, 0.9); border-bottom: none; }
+.call-to-action p { color: hsla(233, 57%, 52%, 0.9); }
+.call-to-action ul li { color: hsla(233, 57%, 52%, 0.9); }
+.call-to-action ul li i { color: white; }
+
+
+
+/* === Section Layout === */
+.content-section {
+  padding: 80px 5%;
+  background-color: #f2f7ff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin: 60px auto;
+  max-width: 1000px;
+  transition: all 0.3s ease;
 }
-.feature-card h4 { font-size: 1.2em; color: var(--primary-blue); margin-top: 10px; margin-bottom: 10px; font-weight: 600; position: relative; z-index: 2;}
-.feature-card p { font-size: 0.9em; color: var(--text-medium); line-height: 1.6; margin-bottom: 0; position: relative; z-index: 2;}
 
-/* 6. FOOTER */
-.site-footer { background-color: #0d1b2a; color: #adb5bd; padding: 2rem 0; text-align: center; margin-top: 3rem; }
-.footer-bottom p { font-size: 0.9em; color: #adb5bd; }
+/* === Header === */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-/* 7. ANIMASI KEYFRAME */
+.section-header h2 {
+  font-size: 2rem;
+  color: #0f3460;
+  font-weight: 700;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background-color: #0077ff;
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+/* === Layout: gambar di atas, teks di bawah === */
+.two-column-layout {
+  display: flex;
+  flex-direction: column; /* ubah jadi vertikal */
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.image-content {
+  width: 100%;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  color: #5a5a5a;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* === Text Styling === */
+.text-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left; /* teks rata kiri agar nyaman dibaca */
+}
+
+.text-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.text-content h4 {
+  font-size: 1.2rem;
+  color: #0f3460;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* === List Styling === */
+.text-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.text-content ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text-content ul li i {
+  color: #0077ff;
+  font-size: 1.1rem;
+}
+
+/* === Animation on Scroll (optional) === */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+}
+/* === Atur agar gambar di atas teks khusus section Bengkulu === */
+#bengkulu .two-column-layout {
+  display: flex !important;
+  flex-direction: column !important; /* pastikan vertikal */
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+/* urutan: gambar di atas, teks di bawah */
+#bengkulu .image-content {
+  order: 1;
+  width: 100%;
+}
+
+#bengkulu .text-content {
+  order: 2;
+  width: 100%;
+  max-width: 800px;
+  text-align: left; /* agar paragraf nyaman dibaca */
+}
+
+/* gambar */
+#bengkulu .image-content img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* caption */
+#bengkulu .image-caption {
+  font-size: 0.9rem;
+  color: #5a5a5a;
+  margin-top: 8px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* responsif */
+@media (max-width: 768px) {
+  #bengkulu .text-content {
+    text-align: center;
+  }
+}
+/* === Section Styling === */
+#manfaat.content-section {
+  background-color: #f8fbff; /* lembut & bersih */
+  border-radius: 16px;
+  padding: 60px 6%;
+  max-width: 900px;
+  margin: 60px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* === Header === */
+#manfaat .section-header {
+  margin-bottom: 30px;
+}
+
+#manfaat .section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f3460;
+  margin-bottom: 10px;
+}
+
+#manfaat .section-divider {
+  width: 70px;
+  height: 4px;
+  background-color: #0077ff;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* === Intro Text === */
+#manfaat .section-intro {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* === List Styling === */
+#manfaat .benefit-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#manfaat .benefit-list li {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect lembut */
+#manfaat .benefit-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* === Ikon === */
+#manfaat .benefit-list li i {
+  color: #0077ff;
+  font-size: 1.2rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* === Teks tebal === */
+#manfaat .benefit-list li strong {
+  color: #0f3460;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  #manfaat .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  #manfaat .benefit-list li {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+
+  #manfaat .benefit-list li i {
+    font-size: 1rem;
+  }
+}
+
+/* === Section Ajakan === */
+#ajakan.content-section {
+  background: linear-gradient(135deg, #d8ecff, #e8f6ff);
+  border-radius: 20px;
+  padding: 70px 6%;
+  text-align: center;
+  max-width: 900px;
+  margin: 80px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* === Judul === */
+#ajakan h2 {
+  font-size: 2rem;
+  color: #0f3460;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* === Paragraf === */
+#ajakan p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* === List Styling === */
+#ajakan ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  text-align: left;
+  max-width: 600px;
+}
+
+#ajakan ul li {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: #0f3460;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover efek lembut */
+#ajakan ul li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Ikon */
+#ajakan ul li i {
+  color: #0077ff;
+  font-size: 1.2rem;
+}
+
+/* === Animasi Masuk === */
+#ajakan.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+#ajakan.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Responsif === */
+@media (max-width: 768px) {
+  #ajakan h2 {
+    font-size: 1.6rem;
+  }
+
+  #ajakan ul li {
+    font-size: 0.95rem;
+  }
+
+  #ajakan ul li i {
+    font-size: 1rem;
+  }
+}
+
+/* 9. ANIMASI KEYFRAME */
 @keyframes fadeInSlideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 8. RESPONSIVE */
+/* 10. RESPONSIVE */
 @media (max-width: 768px) {
-    .hero-mangrove h1 { font-size: 2em; }
-    .hero-subtitle { font-size: 1em; }
-    .content-section h2 { font-size: 1.5em; }
-    .section-content, .section-content.reverse { flex-direction: column; }
-    .image-content { width: 100%; max-width: 100%; margin-bottom: 20px; }
-    .feature-grid { grid-template-columns: 1fr; }
+    .hero-mangrove-themed h1 { font-size: 2em; }
+    .hero-mangrove-themed p { font-size: 1em; }
+    .content-section { padding: 30px; }
+    .section-header h2, .content-section h2 { font-size: 1.5em; }
+    .two-column-layout, .two-column-layout.reverse { flex-direction: column; gap: 25px; }
+    .image-content { width: 100%; max-width: 100%; margin-top: 0; margin-bottom: 20px; }
+    .feature-card-grid { grid-template-columns: 1fr; }
 }

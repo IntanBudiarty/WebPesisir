@@ -83,13 +83,31 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 .hero p { color: rgba(255, 255, 255, 0.95); font-size: 1.1em; margin: 15px 0 40px; }
 
 /* OMBBAK ANIMASI */
-.hero-waves { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; }
-.waves { position: relative; width: 100%; height: 15vh; min-height: 100px; max-height: 150px; }
+.hero-waves { 
+    position: absolute; 
+    bottom: -1px; 
+    left: 0; 
+    width: 100%; 
+    height: 160px; 
+    overflow: hidden;
+}
+.waves { 
+    position: relative; 
+    width: 100%; 
+    height: 160px; 
+    min-height: 100px; 
+    max-height: 160px; 
+}
 .parallax > use { animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite; }
 .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
 .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
 .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
-.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; fill: var(--bg-primary); transition: var(--theme-transition); }
+.parallax > use:nth-child(4) { 
+    animation-delay: -5s; 
+    animation-duration: 20s; 
+    fill: var(--bg-primary); /* Gunakan variabel warna --bg-primary */
+    transition: fill 0.3s ease; /* Transisi warna saat ganti tema */
+}
 @keyframes move-forever { 0% { transform: translate3d(-90px,0,0); } 100% { transform: translate3d(85px,0,0); } }
 
 
@@ -316,13 +334,10 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 .modul-card:nth-child(6) { animation-delay: 0.6s; }
 
 
-
-/* Why Learn Section */
-
 /* 1. CONTAINER UTAMA & JUDUL */
 .why-learn {
     padding: 100px 20px;
-    background-color: #f8f9fa; /* Latar belakang yang bersih */
+    background-color: #f8f9fa; 
 }
 .why-learn h2 {
     text-align: center;
@@ -399,11 +414,11 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
     /* Animasi */
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInSlideUp 0.8s ease-out 1s forwards; /* Muncul terakhir */
+    animation: fadeInSlideUp 0.8s ease-out 1s forwards; 
 }
 .why-summary i {
     font-size: 1.5em;
-    color: #f9a825; /* Warna kuning untuk ikon lampu */
+    color: #f9a825; 
 }
 
 /* 4. SISI KANAN: GAMBAR & KARTU STATISTIK */
@@ -413,7 +428,7 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 .why-image img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5; /* Rasio potrait yang lebih baik */
+    aspect-ratio: 4 / 5; 
     object-fit: cover;
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
@@ -472,7 +487,7 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 
 /* 1. CONTAINER UTAMA & JUDUL */
 .ekosistem-section {
-    padding: 100px 20px;
+    padding: 10px 20px;
     background: #f8f9fa;
 }
 .ekosistem-section h2 {
@@ -1911,7 +1926,7 @@ body.dark-mode footer { background-color: #000; }
     background-color: #0d1b2a;
     color: #adb5bd;
     position: relative;
-    padding: 150px 0 20px; 
+    padding: 10px 0 20px; 
     margin-top: 0;
 }
 

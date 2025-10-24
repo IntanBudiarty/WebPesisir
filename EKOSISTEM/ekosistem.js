@@ -1,34 +1,29 @@
-// SCRIPT UNTUK ANIMASI MUNCUL SAAT SCROLL (Halaman Mangrove Detail)
+// SCRIPT UNTUK ANIMASI MUNCUL SAAT SCROLL
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Pilih semua section konten yang ingin dianimasikan
     const sectionsToAnimate = document.querySelectorAll('.content-section');
 
-    // Pengaturan Intersection Observer
-    const observerOptions = {
-        root: null, 
-        rootMargin: '0px', 
-        threshold: 0.1 // Picu animasi saat 10% elemen terlihat
-    };
+    // Cek jika elemen ada sebelum menjalankan observer
+    if (sectionsToAnimate.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Picu saat 10% elemen terlihat
+        };
 
-    // Fungsi yang dijalankan saat elemen masuk/keluar viewport
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Terapkan animasi langsung ke elemen
-                entry.target.style.animation = `fadeInSlideUp 1s ease-out forwards`;
-                
-                // Hentikan pengamatan setelah animasi dipicu
-                observer.unobserve(entry.target);
-            }
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1'; // Tampilkan elemen
+                    entry.target.style.transform = 'translateY(0)'; // Kembalikan ke posisi normal
+                    observer.unobserve(entry.target); // Hentikan pengamatan
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sectionsToAnimate.forEach(section => {
+            observer.observe(section);
         });
-    };
-
-    // Buat observer
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Amati setiap section
-    sectionsToAnimate.forEach(section => {
-        observer.observe(section);
-    });
+    }
 });
