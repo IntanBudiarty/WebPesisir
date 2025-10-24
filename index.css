@@ -336,7 +336,7 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 
 /* 1. CONTAINER UTAMA & JUDUL */
 .why-learn {
-    padding: 100px 20px;
+    padding: 40px 20px;
     background-color: #f8f9fa; 
 }
 .why-learn h2 {
@@ -487,7 +487,7 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 
 /* 1. CONTAINER UTAMA & JUDUL */
 .ekosistem-section {
-    padding: 10px 20px;
+    padding: 30px 20px;
     background: #f8f9fa;
 }
 .ekosistem-section h2 {
@@ -680,7 +680,7 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 
 /* Referensi Section */
 .referensi-section {
-    padding: 100px 20px;
+    padding: 40px 20px;
     background: #f8f9fa;
 }
 .referensi-section h2 {
@@ -738,7 +738,7 @@ input:checked ~ .slider .moon-icon { opacity: 1; }
 
 /* Tentang Section */
 .tentang-section {
-    padding: 80px 20px;
+    padding: 110px 20px;
     background: #f5f9fc;
 }
 
