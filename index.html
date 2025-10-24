@@ -263,13 +263,6 @@
         <div class="carousel-wrapper">
             <div class="lokasi-carousel">
                 <div class="lokasi-card">
-                    <img src="https://images.unsplash.com/photo-1610016302534-6f67f1e9c20d?w=400" alt="Pantai Panjang">
-                    <div class="card-content">
-                        <h3>PANTAI PANJANG</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Kota Bengkulu</p>
-                    </div>
-                </div>
-                <div class="lokasi-card">
                     <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400" alt="Pantai Linau">
                     <div class="card-content">
                         <h3>PANTAI LINAU</h3>
@@ -311,10 +304,12 @@
                         <p><i class="fas fa-map-marker-alt"></i> Mukomuko</p>
                     </div>
                 </div>
-
                 <div class="lokasi-card">
-                    <img src="https://cdn.rri.co.id/berita/Bengkulu/o/1717566007188-515fab9dbf6c755477306f02eddc5fb3/ryk27ba4h8ai2m3.jpeg" alt="Pantai Panjang">
-                    <div class="card-content"><h3>PANTAI PANJANG</h3><p><i class="fas fa-map-marker-alt"></i> Kota Bengkulu</p></div>
+                    <img src="https://cdn.rri.co.id/berita/Bengkulu/o/1717566007188-515fab9dbf6c755477306f02eddc5fb3/ryk27ba4h8ai2m3.jpeg?w=400" alt="Pantai Panjang">
+                    <div class="card-content">
+                        <h3>PANTAI PANJANG</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Kota Bengkulu</p>
+                    </div>
                 </div>
                 <div class="lokasi-card">
                     <img src="https://siberbengkulu.co/sites/default/files/styles/normal/public/images/article/2024/pantai-linau-bintuhan.jpg.webp?itok=WKW5aT_P?w=400" alt="Pantai Linau">
@@ -493,46 +488,27 @@
             <p>&copy; 2025 Pesisir Nusantara | Didukung oleh Penelitian Unggulan Universitas Bengkulu.</p> </div>
     </div>
 </footer>
-    <script>
-        const themeSwitch = document.getElementById('checkbox');
-        const currentTheme = localStorage.getItem('theme');
+   <script>
+    const hamburger = document.querySelector(".hamburger-menu");
+    const navMenu = document.querySelector(".nav-menu");
 
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.body.classList.add('dark-mode');
-                themeSwitch.checked = true;
-            } else {
-                document.body.classList.remove('dark-mode');
-                themeSwitch.checked = false;
-            }
-        }
-
-        if (currentTheme) {
-            setTheme(currentTheme);
-        }
-
-        themeSwitch.addEventListener('change', function(event) {
-            let theme = event.target.checked ? 'dark' : 'light';
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', theme);
-        });
-
-        const hamburger = document.querySelector(".hamburger-menu");
-        const navMenu = document.querySelector(".nav-menu");
-
+    if (hamburger && navMenu) {
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
         });
 
-        // (Opsional) Tutup menu saat link di-klik
-        document.querySelectorAll(".nav-links li a").forEach(link => {
+        document.querySelectorAll(".nav-menu .nav-links a").forEach(link => {
             link.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navMenu.classList.remove("active");
+                if (hamburger.classList.contains("active")) {
+                    hamburger.classList.remove("active");
+                    navMenu.classList.remove("active");
+                }
             });
         });
-
+    } else {
+        console.error("Tombol hamburger atau menu navigasi tidak ditemukan!");
+    }
 </script>
 
 </body>
