@@ -1,18 +1,12 @@
-/*
-===================================================================
---- KODE CSS FINAL UNTUK TAMPILAN MODUL YANG MODERN & RAPI ---
-===================================================================
-*/
 
-/* 1. FONDASI: FONT, WARNA, & PENGATURAN DASAR */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary: #1e3a5f;      /* Biru Tua Elegan */
-    --secondary: #2575fc;   /* Biru Terang untuk Aksen */
-    --accent: #6a11cb;       /* Ungu untuk Gradien */
-    --light-bg: #f8f9fa;     /* Latar Belakang Utama */
-    --light-blue-bg: #eaf2ff;/* Latar Belakang Info Box */
+    --primary: #1e3a5f;      
+    --secondary: #2575fc;  
+    --accent: #6a11cb;       
+    --light-bg: #f8f9fa;    
+    --light-blue-bg: #eaf2ff;
     --white: #ffffff;
     --text-dark: #333;
     --text-light: #555;
@@ -68,7 +62,7 @@ header {
     background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
-    margin-top: 70px; /* Sesuaikan dengan tinggi header Anda */
+    margin-top: 70px; 
 }
 .breadcrumb a {
     color: var(--secondary);
