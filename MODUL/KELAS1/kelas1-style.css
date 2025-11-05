@@ -40,8 +40,8 @@ body {
     -webkit-backdrop-filter: blur(15px);
     
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px; /* Sudut tumpul */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
     
     padding: 2rem;
     z-index: 1000;
@@ -65,7 +65,7 @@ body {
     border-left: 3px solid transparent;
 }
 .table-of-contents li.active a {
-    background-color: rgba(255, 255, 255, 0.7); /* Latar aktif lebih solid */
+    background-color: rgba(255, 255, 255, 0.7);
     color: var(--secondary);
     font-weight: 600;
     border-left: 3px solid var(--secondary);
@@ -80,7 +80,7 @@ body {
     display: flex; align-items: center; gap: 12px;
     padding: 12px 15px; text-decoration: none; font-weight: 500;
     border-radius: 8px; transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Border tipis */
+    border: 1px solid rgba(0, 0, 0, 0.05);
     background-color: rgba(255, 255, 255, 0.4);
 }
 .btn-download:hover {
@@ -98,18 +98,18 @@ body {
     border-radius: 8px; transition: all 0.3s ease;
 }
 .back-link:hover { background-color: rgba(255, 255, 255, 0.7); color: var(--primary); }
-.back-link-mobile { display: none; } /* Sembunyikan di desktop */
+.back-link-mobile { display: none; } 
 
 /* 3. KONTEN UTAMA DI KANAN (Konten bergulir) */
 .main-content {
-    margin-left: 300px; /* Lebar sidebar + 20px margin */
-    padding: 20px; /* Jarak agar konten tidak nempel */
+    margin-left: 300px;
+    padding: 20px;
 }
 
 /* 4. HEADER DI DALAM KONTEN */
 .main-header {
     display: flex;
-    justify-content: flex-end; /* Taruh di kanan */
+    justify-content: flex-end; 
     align-items: center;
     padding: 10px 0;
     margin-bottom: 1.5rem;
@@ -119,16 +119,16 @@ body {
 /* 5. HERO SECTION (Cerah & Bersih) */
 .hero-section {
     position: relative;
-    height: 60vh; /* Tinggi yang nyaman untuk video */
+    height: 60vh; 
     min-height: 450px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Pusatkan konten */
-    text-align: center; /* Pusatkan teks */
-    color: var(--white); /* Warna teks putih */
-    overflow: hidden; /* Penting untuk video */
-    border-radius: 16px; /* Tetap dengan border-radius */
-    margin-bottom: 2rem; /* Jarak dengan konten di bawahnya */
+    justify-content: center;
+    text-align: center; 
+    color: var(--white); 
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 2rem; 
 }
 
 /* 2. VIDEO BACKGROUND */
@@ -139,14 +139,12 @@ body {
     min-width: 100%; min-height: 100%;
     width: auto; height: auto;
     z-index: 0;
-    object-fit: cover; /* Pastikan video menutupi seluruh area */
+    object-fit: cover; 
 }
 
-/* 3. OVERLAY GELAP (Agar Teks Terbaca Jelas) */
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Gradien biru tua transparan yang halus */
     background: linear-gradient(135deg, rgba(30, 58, 95, 0.75) 0%, rgba(0, 119, 182, 0.6) 100%);
     z-index: 1;
 }
@@ -155,35 +153,35 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px; /* Batasi lebar agar tidak terlalu panjang */
-    padding: 0 30px; /* Padding samping */
+    max-width: 700px; 
+    padding: 0 30px;
     animation: fadeInSlideUp 0.8s ease-out forwards;
 }
 
 .hero-badge {
-    background: rgba(245, 245, 245, 0.2); /* Badge transparan */
-    backdrop-filter: blur(5px); /* Efek blur pada badge */
+    background: rgba(245, 245, 245, 0.2); 
+    backdrop-filter: blur(5px); 
     color: var(--white);
     padding: 8px 20px;
     border-radius: 25px;
     font-size: 0.9em;
     font-weight: 500;
     letter-spacing: 0.5px;
-    display: inline-block; /* Agar padding dan blur berfungsi */
+    display: inline-block; 
     margin-bottom: 15px;
 }
 
 .hero-section h1 {
-    font-size: 3.5em; /* Ukuran font lebih besar */
+    font-size: 3.5em;
     font-weight: 700;
-    text-shadow: 0 4px 10px rgb(38, 37, 37); /* Bayangan teks lebih kuat */
+    text-shadow: 0 4px 10px rgb(38, 37, 37);
     margin: 15px 0;
     color: var(--bg-light);
     line-height: 1.2;
 }
 
 .hero-section p {
-    font-size: 1.4em; /* Ukuran font lebih besar */
+    font-size: 1.4em;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
     line-height: 1.6;
@@ -213,12 +211,11 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #f0f9ff;      /* Latar sedikit biru saat hover */
+    background-color: #f0f9ff;     
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Bayangan lebih jelas saat hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
 }
 
-/* Hapus ilustrasi dan shape-divider jika ada */
 .hero-illustration, .shape-divider {
     display: none;
 }
@@ -251,12 +248,12 @@ body {
 /* 6. BOX KONTEN UMUM */
 .content-box {
     background-color: var(--white);
-    padding: 3rem 4rem; /* Padding besar agar ada ruang */
+    padding: 3rem 4rem;
     margin: 3rem auto;
     border-radius: 16px;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-soft);
-    opacity: 0; /* Untuk animasi JS */
+    opacity: 0; 
     transform: translateY(30px);
 }
 
@@ -272,51 +269,51 @@ body {
 
 /* 2. LAYOUT 2 KOLOM (Teks & Gambar) */
 .content-split {
-    display: flex;         /* WAJIB: Aktifkan Flexbox */
-    align-items: center;   /* Sejajarkan item di tengah vertikal */
-    gap: 3rem;           /* Jarak antara teks dan gambar */
-    width: 100%;           /* Ambil lebar penuh */
+    display: flex;        
+    align-items: center;  
+    gap: 3rem;          
+    width: 100%;          
 }
 
 /* 3. MODIFIER UNTUK MEMBALIK URUTAN */
 .content-split.reverse {
-    flex-direction: row-reverse; /* WAJIB: Membalik urutan */
+    flex-direction: row-reverse; 
 }
 
 /* 4. WADAH TEKS */
 .text-content {
-    flex: 1;             /* WAJIB: Biarkan teks mengisi ruang sisa */
-    min-width: 0;        /* Mencegah teks meluap */
+    flex: 1;            
+    min-width: 0;       
 }
 
 .text-content h3 {
     font-size: 1.3em;
     font-weight: 600;
     color: var(--primary);
-    margin-top: 1.5rem; /* Jarak antar sub-judul */
+    margin-top: 1.5rem; 
 }
 .text-content h3:first-child {
-    margin-top: 0; /* Hapus jarak untuk sub-judul pertama */
+    margin-top: 0; 
 }
 
 .text-content p {
     font-size: 1.05em;
     color: var(--text-medium);
-    margin-top: 0.5rem; /* Jarak antar paragraf */
+    margin-top: 0.5rem; 
 }
 
 /* 5. WADAH GAMBAR */
 .image-content {
-    flex-basis: 40%;     /* WAJIB: Tetapkan lebar dasar gambar (misal 40%) */
-    flex-shrink: 0;      /* Jangan biarkan gambar menyusut */
-    max-width: 400px;    /* Batasi lebar maks gambar */
+    flex-basis: 40%;     
+    flex-shrink: 0;      
+    max-width: 400px;    
 }
 
 .image-content img {
     width: 100%;
     border-radius: 12px;
     box-shadow: var(--shadow-medium);
-    display: block; /* Hapus spasi putih bawah */
+    display: block; 
 }
 /* 7. KARTU CIRI-CIRI (RAMAH ANAK) */
 .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -348,26 +345,24 @@ footer { text-align: center; padding: 2rem 0; color: var(--text-medium); font-si
 /* 10. RESPONSIVE (MOBILE) */
 @media (max-width: 900px) {
     .sidebar {
-        /* Jadikan sidebar horizontal di atas untuk mobile */
         width: 100%; height: auto;
         top: 0; left: 0;
         border-radius: 0;
-        flex-direction: row; /* Susun horizontal */
+        flex-direction: row; 
         padding: 1rem;
         align-items: center;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .sidebar .logo { margin-bottom: 0; font-size: 1.2em; }
-    /* Sembunyikan daftar isi & download di mobile */
     .table-of-contents, .download-section { display: none; }
-    .back-link { margin: 0 0 0 auto; /* Pindah ke kanan */ }
+    .back-link { margin: 0 0 0 auto;  }
     
     .main-content {
-        margin-left: 0; /* Konten full width */
-        padding-top: 90px; /* Jarak dari header fixed */
+        margin-left: 0; 
+        padding-top: 90px; 
     }
-    .main-header { display: none; } /* Sembunyikan header konten */
-    .back-link-mobile { /* Tampilkan link kembali alternatif */
+    .main-header { display: none; }
+    .back-link-mobile { 
         display: block;
         color: var(--secondary);
         text-decoration: none;
