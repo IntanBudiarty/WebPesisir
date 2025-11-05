@@ -158,14 +158,52 @@ body.dark-mode .dropdown-content li a:hover { background-color: #333; }
 .stat-number { font-size: 2.8em; font-weight: 700; margin: 0; line-height: 1.1; color: white; }
 .stat-label { font-size: 1em; font-weight: 500; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; color: white; }
 
+
 /* 5. STYLE UMUM SECTION */
 .section-header { text-align: center; margin-bottom: 50px; }
 .section-header h2 { font-size: 2.5em; margin-bottom: 15px; }
-.section-header p, .subtitle { color: var(--text-secondary); font-size: 1.1em; max-width: 700px; margin: 0 auto; }
-.modul-section, .why-learn, .ekosistem-section, .lokasi-section, .referensi-section, .tentang-section { padding: 100px 20px; }
+.section-header p, .subtitle { 
+    color: var(--text-secondary); 
+    font-size: 1.1em; 
+    max-width: 700px; 
+    margin: 0 auto 50px auto; 
+    text-align: center;
+}
+.modul-section, .why-learn, .ekosistem-section, .lokasi-section, .referensi-section,.tentang-section { padding: 80px 20px; } /* INI PENYEBABNYA */
 .quote-section { padding: 150px 20px; }
 .site-footer { padding: 150px 0 20px; margin-top: 0; }
 .modul-section { padding-top: 100px; }
+
+
+/* .section-header { 
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+.section-header h2 { 
+    font-size: 2.5em; 
+    margin-bottom: 15px; 
+    text-align: center;
+}
+.section-header p, .subtitle { 
+    color: var(--text-secondary); 
+    font-size: 1.1em; 
+    max-width: 700px; 
+    margin: 0 auto 50px auto; 
+    text-align: center;
+}
+
+.modul-section, .why-learn, .ekosistem-section, .lokasi-section, .referensi-section, .tentang-section {
+    padding: 80px 20px; 
+}
+
+.quote-section {
+    padding: 150px 20px; 
+}
+
+.site-footer { padding: 150px 0 20px; margin-top: 0; }
+.modul-section {
+    padding-top: 100px; 
+} */
 
 /* 6. MODUL SECTION & FILTER */
 .filter-tabs {
@@ -224,6 +262,17 @@ body.dark-mode .dropdown-content li a:hover { background-color: #333; }
 
 /* 7. "WHY LEARN" SECTION */
 .why-learn { background-color: var(--bg-secondary); }
+.why-learn h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.why-learn .subtitle {
+    text-align: center;
+    max-width: 700px; 
+    margin: 0 auto 60px auto; 
+}
 .why-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .why-list { display: flex; flex-direction: column; gap: 35px; }
 .why-item { display: flex; gap: 20px; align-items: flex-start; opacity: 0; transform: translateX(-30px); animation: slideInFromLeft 0.8s ease-out forwards; }
@@ -263,6 +312,18 @@ body.dark-mode .dropdown-content li a:hover { background-color: #333; }
     cursor: pointer; border: 1px solid var(--border-color); transition: all 0.4s ease;
     opacity: 0; transform: translateY(30px); animation: fadeInSlideUp 0.7s ease-out forwards;
 }
+.ekosistem-section h2 {
+     text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ekosistem-section .subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 .ekosistem-card.hide { transform: scale(0.9); opacity: 0; pointer-events: none; }
 .ekosistem-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-medium); }
 .ekosistem-card .card-image { height: 240px; position: relative; overflow: hidden; }
@@ -278,6 +339,20 @@ body.dark-mode .dropdown-content li a:hover { background-color: #333; }
 
 /* 9. LOKASI CAROUSEL */
 .carousel-wrapper { overflow: hidden; padding: 20px 0; width: 100%; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); }
+.lokasi-section h2 {
+     text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Ini akan memusatkan subjudul di bawahnya */
+.lokasi-section .subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
 .lokasi-carousel { display: flex; gap: 20px; width: fit-content; animation: infiniteScroll 40s linear infinite; animation-play-state: paused; }
 .carousel-wrapper:hover .lokasi-carousel { animation-play-state: running; }
 .lokasi-card { flex: 0 0 300px; position: relative; border-radius: 16px; overflow: hidden; color: white; transition: transform 0.4s ease; }
@@ -290,6 +365,18 @@ body.dark-mode .dropdown-content li a:hover { background-color: #333; }
 
 /* 10. REFERENSI SECTION */
 .referensi-section { background: var(--bg-secondary); }
+.referensi-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.referensi-section .subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 .referensi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 .ref-card { background: var(--bg-white); padding: 30px; border-radius: 16px; box-shadow: var(--shadow-soft); text-decoration: none; transition: all 0.3s; border: 1px solid var(--border-color); }
 .ref-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); border-color: var(--accent-primary); }
@@ -323,7 +410,7 @@ body.dark-mode .dropdown-content li a:hover { background-color: #333; }
 /* 13. FOOTER */
 .site-footer {
     background-color: #0d1b2a; color: #adb5bd; position: relative;
-    padding: 150px 0 20px; margin-top: 0;
+    padding: 150px 0 20px; margin-top: 30px;
 }
 .footer-waves { position: absolute; top: 0; left: 0; width: 100%; height: 150px; transform: translateY(-100%); overflow: hidden; }
 .footer-waves .waves { position: absolute; bottom: 0; width: 100%; height: 150px; }
