@@ -176,10 +176,23 @@ body {
     background: var(--bg-white);
     border: 1px solid var(--border-soft);
     border-radius: 12px;
-    padding: 25px;
+    padding: 0px;
     display: block; 
     text-align: left; 
     transition: all 0.3s ease;
+    overflow: hidden;
+}
+.feature-image {
+    width: 100%;
+    height: 180px; /* Atur tinggi gambar agar seragam */
+    object-fit: cover; /* Memastikan gambar pas tanpa penyok */
+    display: block;
+    border-bottom: 1px solid var(--border-soft); /* Garis pemisah */
+}
+
+/* 4. WADAH TEKS (BARU) */
+.feature-text {
+    padding: 20px; /* Beri padding untuk teks di bawah gambar */
 }
 
 .feature-card:hover {
@@ -286,6 +299,7 @@ footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--tex
     align-items: flex-start;
     gap: 40px;
     margin-bottom: 1rem;
+    text-align: justify;
 }
 .content-split.reverse {
     flex-direction: row-reverse;
@@ -295,6 +309,7 @@ footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--tex
 .text-content {
     flex: 1;
     min-width: 0;
+    
 }
 .text-content h3 {
     font-size: 1.3em;
@@ -307,6 +322,7 @@ footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--tex
     font-size: 1.05em;
     color: var(--text-medium);
     margin-bottom: 1rem;
+    text-align: justify;
 }
 .image-content {
     flex-basis: 40%;
@@ -319,6 +335,8 @@ footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--tex
     box-shadow: var(--shadow-medium);
     display: block;
     height: auto;
+    max-width: 500px; 
+    margin: 0 auto;
 }
 .figure img {
     width: 100%; border-radius: 12px; box-shadow: var(--shadow-medium);
@@ -413,7 +431,21 @@ footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--tex
     margin-bottom: 1.5rem;
     text-align: center; 
 }
+.story-item {
+    /* Layout 1 kolom, gambar di atas, teks di bawah */
+    max-width: 700px; /* Batasi lebar agar nyaman dibaca */
+    margin: 0 auto;   /* Pusatkan di tengah */
+    text-align: left; /* Teks rata kiri */
+}
 
+/* 4. Style untuk judul item (H4) */
+.story-item h4 {
+    font-size: 1.5em; /* Ukuran judul item */
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1.5rem; /* Jarak ke gambar */
+    text-align: center; /* Judul di tengah */
+}
 .story-image {
     width: 100%;
     margin-bottom: 2rem; 
@@ -438,6 +470,52 @@ footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--tex
     font-size: 1.05em;
     color: var(--text-medium);
     margin-bottom: 1.2rem; 
+    text-align: justify;
+}
+.text-content h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 1.5rem; /* Jarak dari konten sebelumnya */
+    margin-bottom: 1rem; /* Jarak ke daftar di bawahnya */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.text-content h4:first-child {
+    margin-top: 0;
+}
+
+/* 2. Style untuk Daftar Ikon (UL) - BARU */
+.icon-list {
+    list-style: none; /* Hapus bullet point default */
+    padding-left: 0; /* Hapus padding default */
+    margin: 0; /* Hapus margin default */
+}
+/* Beri jarak antar daftar (Hak & Kewajiban) */
+.icon-list + h4 {
+    margin-top: 2rem;
+}
+
+/* 3. Style untuk Setiap Item (LI) - BARU */
+.icon-list li {
+    position: relative; /* Wajib untuk positioning ikon */
+    padding-left: 35px; /* Ruang untuk ikon */
+    margin-bottom: 12px; /* Jarak antar item */
+    font-size: 1.05em;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* 4. Style untuk Ikon (I) - BARU */
+.icon-list li i {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Sesuaikan agar pas di tengah baris */
+    width: 25px; /* Beri lebar tetap */
+    text-align: center; /* Pusatkan ikon */
+    color: var(--secondary); /* Warna ikon biru */
+    font-size: 1.1em; /* Ukuran ikon */
 }
 
 /* Responsive untuk mobile */
