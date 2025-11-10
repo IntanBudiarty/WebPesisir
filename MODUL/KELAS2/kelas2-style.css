@@ -1,15 +1,20 @@
-
+/* 1. FONDASI & IMPORT FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary: #1e3a5f;
-    --secondary: #0077b6;
-    --accent-yellow: #ffc300;
-    --accent-red: #d90429;
-    --bg-light: #f7faff;     
-    --bg-white: #ffffff;
-    --text-dark: #344054;
+    /* Palet Warna - Sesuai Tema Modul */
+    --primary: #1e3a5f;      /* Biru Tua */
+    --secondary: #0077b6;   /* Biru Cerah */
+    --accent-green: #28a745;  /* Hijau */
+    --accent-yellow: #ffc300;/* Kuning Ceria */
+    --accent-red: #d90429;   /* Merah PDF */
+    --bg-light: #f7faff;     /* Latar Belakang Utama Paling Cerah */
+    --bg-white: #ffffff;     /* FIX: Mendefinisikan white eksplisit */
+    --white: #ffffff;        /* FIX: Menambahkan definisi untuk 'white' */
+    --bg-alt: #f0f9ff;     /* Latar Belakang Alternatif (Biru Pucat) */
+    --text-dark: #344054; 
     --text-medium: #667085;
+    --text-light: #a0aec0;
     --border-soft: #eef2f7;
     --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
     --shadow-medium: 0 10px 30px rgba(0, 119, 182, 0.1);
@@ -24,55 +29,107 @@ body {
     color: var(--text-dark);
     line-height: 1.7;
     font-size: 16px;
-    overflow-x: hidden;
 }
 
+/* 1. Style untuk Kontainer Navigasi Kelompok */
+.group-navigation {
+    margin-bottom: 1.5rem; 
+}
+
+.group-navigation h3 {
+    font-size: 1em; 
+    font-weight: 600;
+    color: var(--primary);
+    padding: 0 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.group-navigation ul {
+    list-style: none;
+    padding: 0;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 8px; 
+}
+
+.group-navigation li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 0.7em;
+    border: 1px solid var(--border-soft);
+    background: var(--bg-light); 
+}
+
+/* 2. Style untuk Link Kelompok yang Aktif */
+.group-navigation li.active a,
+.group-navigation li a:hover {
+    background-color: var(--secondary); 
+    color: var(--white); 
+    font-weight: 600;
+    border-color: var(--secondary);
+    box-shadow: 0 4px 10px rgba(0, 119, 182, 0.2);
+}
+
+/* 3. Penyesuaian Ulang Daftar Isi Materi (Kritis) */
+.table-of-contents ul { 
+    max-height: calc(100vh - 500px); 
+    list-style: none; padding: 0; 
+    max-height: calc(100vh - 400px); 
+    font-size: 0.7em;
+}
+
+/* FIX KRITIS: Teks Daftar Isi di Sidebar */
+.table-of-contents li a {
+    display: block; padding: 10px 12px; text-decoration: none;
+    color: var(--text-dark); /* FIX: Menggunakan warna gelap untuk kontras */
+    font-weight: 500; border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent; font-size: 0.95em;
+}
+.table-of-contents li.active a {
+    background-color: var(--bg-alt);
+    color: var(--secondary);
+    font-weight: 600;
+    border-left: 3px solid var(--secondary);
+}
+
+/* 2. SIDEBAR KIRI */
 .sidebar {
-    position: fixed;
-    top: 20px;
-    left: 20px; 
-    width: 280px;
-    height: calc(100vh - 40px); 
-    
-    /* EFEK KACA */
-    background: rgba(255, 255, 255, 0.6); 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
-    
-    padding: 2rem;
-    z-index: 1000;
+    position: fixed; top: 0; left: 0;
+    width: 280px; height: 100vh;
+    background: var(--bg-white);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    padding: 2rem; z-index: 1000;
     display: flex; flex-direction: column;
+    border-right: 1px solid var(--border-soft);
+    display: flex;
+    flex-direction: column;
 }
 .sidebar .logo {
-    font-size: 1.5rem; font-weight: 700; color: var(--primary);
+    font-size: 1rem; font-weight: 700; color: var(--primary);
     display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;
     text-decoration: none;
 }
 .sidebar .logo i { color: var(--secondary); }
 .sidebar h3 {
     font-size: 0.9em; font-weight: 600; color: var(--text-medium);
-    margin: 1.5rem 0 1rem; text-transform: uppercase; letter-spacing: 0.5px;
+    margin: 1rem 0 1rem; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.table-of-contents ul { list-style: none; padding: 0; }
-.table-of-contents li a {
-    display: block; padding: 10px 12px; text-decoration: none;
-    color: var(--text-dark); font-weight: 500; border-radius: 8px;
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-}
-.table-of-contents li.active a {
-    background-color: rgba(255, 255, 255, 0.7);
-    color: var(--secondary);
-    font-weight: 600;
-    border-left: 3px solid var(--secondary);
-}
-.table-of-contents li a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    transform: translateX(5px);
+.table-of-contents {
+    flex: 1 1 auto; 
+    min-height: 0;  
+    overflow-y: auto;  
+    margin-bottom: 1rem; 
+    
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--border-soft);
 }
 .download-section { margin-top: 1.5rem; }
 .download-buttons { display: flex; flex-direction: column; gap: 10px; }
@@ -80,14 +137,10 @@ body {
     display: flex; align-items: center; gap: 12px;
     padding: 12px 15px; text-decoration: none; font-weight: 500;
     border-radius: 8px; transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background-color: rgba(255, 255, 255, 0.4);
-}
-.btn-download:hover {
+    border: 1px solid var(--border-soft);
     background-color: var(--bg-white);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
 }
+.btn-download:hover { box-shadow: var(--shadow-medium); transform: translateY(-2px); border-color: var(--secondary); }
 .btn-download i { font-size: 1.2em; width: 20px; }
 .btn-download.pdf { color: var(--accent-red); }
 .btn-download.image { color: var(--accent-yellow); }
@@ -97,285 +150,272 @@ body {
     color: var(--text-medium); text-decoration: none; font-weight: 500;
     border-radius: 8px; transition: all 0.3s ease;
 }
-.back-link:hover { background-color: rgba(255, 255, 255, 0.7); color: var(--primary); }
-.back-link-mobile { display: none; } 
+.back-link:hover { background-color: var(--bg-light); color: var(--primary); }
+.back-link-mobile { display: none; }
 
-/* 3. KONTEN UTAMA DI KANAN (Konten bergulir) */
-.main-content {
-    margin-left: 300px;
-    padding: 20px;
-}
+/* 3. KONTEN UTAMA DI KANAN */
+.main-content { margin-left: 280px; padding: 0; }
+.main-header { display: flex; justify-content: flex-end; align-items: center; padding: 10px 40px; }
+footer { margin-left: 280px; text-align: center; padding: 2rem; color: var(--text-medium); font-size: 0.9em; }
 
-/* 4. HEADER DI DALAM KONTEN */
-.main-header {
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-    padding: 10px 0;
-    margin-bottom: 1.5rem;
-}
-
-
-/* 5. HERO SECTION (Cerah & Bersih) */
-.hero-section {
-    position: relative;
-    height: 60vh; 
-    min-height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
-    color: var(--white); 
-    overflow: hidden;
+/* 4. HERO SECTION (Kritis: Warna Teks) */
+.hero-section.hero-themed {
+    background: linear-gradient(135deg, var(--secondary), #1c5ab5);
+    color: var(--white); /* FIX: Kritis, warna font dasar terang */
+    padding: 3rem 50px;
     border-radius: 16px;
-    margin-bottom: 2rem; 
+    margin: 20px;
+    min-height: auto;
 }
+.hero-content { animation: fadeInSlideUp 0.8s ease-out forwards; }
 
-/* 2. VIDEO BACKGROUND */
-.hero-video {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%; min-height: 100%;
-    width: auto; height: auto;
-    z-index: 0;
-    object-fit: cover; 
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 58, 95, 0.75) 0%, rgba(0, 119, 182, 0.6) 100%);
-    z-index: 1;
-}
-
-/* 4. KONTEN (Teks & Tombol) */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px; 
-    padding: 0 30px;
-    animation: fadeInSlideUp 0.8s ease-out forwards;
-}
-
+/* FIX KRITIS: Hero Badge */
 .hero-badge {
-    background: rgba(245, 245, 245, 0.2); 
-    backdrop-filter: blur(5px); 
-    color: var(--white);
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-size: 0.9em;
-    font-weight: 500;
-    letter-spacing: 0.5px;
     display: inline-block; 
-    margin-bottom: 15px;
+    background-color: var(--accent-yellow); /* Kuning Ceria */
+    padding: 5px 15px; border-radius: 15px; font-size: 0.8em;
+    margin-bottom: 1rem; font-weight: 500;
+    color: var(--primary); /* FIX: Teks gelap di atas kuning terang */
 }
 
-.hero-section h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    text-shadow: 0 4px 10px rgb(38, 37, 37);
-    margin: 15px 0;
-    color: var(--bg-light);
-    line-height: 1.2;
+.hero-themed h1 { 
+    font-size: 2.5em; margin-bottom: 0.5rem; 
+    color: var(--white); /* FIX: Pastikan ini white */
+}
+.hero-themed p { 
+    font-size: 1.1em; opacity: 0.9; 
+    color: var(--white); /* FIX: Pastikan ini white */
 }
 
-.hero-section p {
-    font-size: 1.4em;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-weight: 400;
-}
-
-/* 5. TOMBOL PRIMER (Mulai Belajar) */
-
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    
-    /* Perubahan Desain: */
-    background-color: var(--white);
-    color: var(--primary);      
-    padding: 12px 28px;           
-    border-radius: 30px;          
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1em;                
-    transition: all 0.3s ease;
-    
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    
-    margin-top: 20px;
-}
-
-.btn-primary:hover {
-    background-color: #f0f9ff;     
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
-}
-
-.hero-illustration, .shape-divider {
-    display: none;
-}
-
-/* 6. RESPONSIVE UNTUK HERO SECTION */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 50vh;
-        min-height: 350px;
-        padding: 0 20px;
-    }
-    .hero-section h1 {
-        font-size: 2.5em;
-        margin: 10px 0;
-    }
-    .hero-section p {
-        font-size: 1.1em;
-        margin-bottom: 20px;
-    }
-    .hero-badge {
-        padding: 6px 15px;
-        font-size: 0.8em;
-    }
-    .btn-primary {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-}
-
-/* 6. BOX KONTEN UMUM */
+/* 5. BOX KONTEN UMUM */
 .content-box {
-    background-color: var(--white);
-    padding: 3rem 4rem;
-    margin: 3rem auto;
-    border-radius: 16px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-soft);
-    opacity: 0; 
-    transform: translateY(30px);
+    padding: 3rem 4rem; max-width: 950px; margin: 2rem auto;
+    background: var(--bg-white); border-radius: 16px;
+    box-shadow: var(--shadow-soft); border: 1px solid var(--border-soft);
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
+.content-box.section-alt { background-color: var(--bg-alt); }
+.content-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .content-box h2 {
-    font-size: 2em;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-size: 2em; font-weight: 600; color: var(--primary);
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;
+    padding-bottom: 15px; border-bottom: 1px solid var(--border-soft);
+}
+.content-box h3 {
+    font-size: 1.3em; font-weight: 600; color: var(--primary);
+    margin-top: 1.5rem; margin-bottom: 0.5rem;
+}
+.content-box p { color: var(--text-medium); margin-bottom: 1rem; font-size: 1.05em; }
+.lead { font-size: 1.15em; font-weight: 500; color: var(--text-dark); }
+.content-box ol, .content-box ul { padding-left: 20px; margin-top: 1rem; }
+
+/* 6. LAYOUT SPESIFIK & GAMBAR */
+
+/* --- Umum Gambar --- */
+/* FIX PENTING: Aturan untuk semua gambar di konten utama */
+.main-content img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* 2. LAYOUT 2 KOLOM (Teks & Gambar) */
+.centered-figure {
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.centered-figure img {
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    /* Batasi lebar gambar agar tidak terlalu besar di desktop */
+    max-width: 700px; /* Sesuaikan nilai ini (misalnya 700px) */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image-grid {
+    display: grid;
+    gap: 15px;
+    margin: 0 auto; 
+}
+@media (min-width: 600px) {
+    .image-grid.grid-cols-2 { grid-template-columns: 1fr 1fr; }
+    .image-grid.grid-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+
 .content-split {
-    display: flex;        
-    align-items: center;  
-    gap: 3rem;          
-    width: 100%;          
+    display: flex;
+    align-items: flex-start; 
+    gap: 40px;
+    margin-bottom: 1rem;
 }
-
-/* 3. MODIFIER UNTUK MEMBALIK URUTAN */
 .content-split.reverse {
-    flex-direction: row-reverse; 
+    flex-direction: row-reverse;
 }
-
-/* 4. WADAH TEKS */
 .text-content {
-    flex: 1;            
-    min-width: 0;       
+    flex: 1;
+    min-width: 0;
 }
-
 .text-content h3 {
     font-size: 1.3em;
     font-weight: 600;
     color: var(--primary);
-    margin-top: 1.5rem; 
-}
-.text-content h3:first-child {
     margin-top: 0; 
+    margin-bottom: 0.5rem; 
 }
-
 .text-content p {
     font-size: 1.05em;
     color: var(--text-medium);
-    margin-top: 0.5rem; 
+    margin-bottom: 1rem;
 }
-
-/* 5. WADAH GAMBAR */
 .image-content {
-    flex-basis: 40%;     
-    flex-shrink: 0;      
-    max-width: 400px;    
+    flex-basis: 40%;
+    flex-shrink: 0;
+    max-width: 350px;
 }
-
-.image-content img {
+.content-image {
     width: 100%;
     border-radius: 12px;
     box-shadow: var(--shadow-medium);
-    display: block; 
+    display: block;
+    height: auto;
 }
-/* 7. KARTU CIRI-CIRI (RAMAH ANAK) */
-.feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-.feature-card {
-    background: var(--bg-light); border: 1px solid var(--border-soft);
-    border-radius: 12px; padding: 25px; display: flex;
-    align-items: center; gap: 20px; transition: all 0.3s ease;
+.activity-box .content-split {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
-.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); border-color: var(--secondary); }
-.feature-icon {
-    flex-shrink: 0; width: 60px; height: 60px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.8em; color: var(--white);
+.activity-box .text-content {
+    flex: 1;
+    min-width: 0;
 }
-.feature-icon.sand { background: #ffc300; }
-.feature-icon.salt { background: #00b4d8; }
-.feature-icon.wave { background: #0077b6; }
-.feature-icon.crab { background: #d90429; }
-.feature-text h4 { font-size: 1.2em; color: var(--primary); margin-bottom: 5px; }
-.feature-text p { font-size: 0.95em; color: var(--text-medium); line-height: 1.5; margin: 0; }
+.activity-box .image-content {
+    flex-basis: 35%; 
+    max-width: 300px; 
+    flex-shrink: 0;
+}
+.activity-box .content-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+}
+@media (max-width: 768px) {
+    .activity-box .content-split {
+        flex-direction: column-reverse; 
+    }
+    .activity-box .image-content {
+        flex-basis: auto;
+        max-width: 100%;
+        width: 100%;
+    }
+}
 
-/* 8. FOOTER */
-footer { text-align: center; padding: 2rem 0; color: var(--text-medium); font-size: 0.9em; }
+/* 7. KOTAK & TABEL SPESIFIK PDF (Tidak diubah) */
+.activity-box {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-soft);
+    padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;
+}
+.activity-box h3 { border-bottom: 1px solid var(--border-soft); padding-bottom: 10px; }
+.activity-box.conclusion { background-color: #d1fae5; border-color: #6ee7b7; }
+.activity-box.conclusion h3 { color: #065f46; }
 
-/* 9. KEYFRAMES ANIMASI */
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes fadeInSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+/* --- PENYESUAIAN KHUSUS UNTUK KELAS 2 MODUL 1 (TEMA BENTANG ALAM) --- */
 
-/* 10. RESPONSIVE (MOBILE) */
+/* 1. Kustomisasi Hero Section - Memberi nuansa peta/geografi */
+.hero-section.hero-themed {
+    /* Mengubah gradient agar lebih menyerupai air/laut dan langit */
+    background: linear-gradient(135deg, #0077b6, #00b4d8); 
+}
+
+/* 2. Style Khusus untuk Kotak Kegiatan STEAM (Kritis: Warna) */
+.activity-box.steam-box {
+    background-color: #e0fcfd; 
+    border: 2px solid #00b4d8;
+}
+.activity-box.steam-box h3 {
+    color: #0077b6; 
+    font-weight: 700;
+}
+.activity-box.math-box {
+    background-color: #fff8e1; 
+    border: 2px solid #ffc300;
+}
+.activity-box.math-box h3 {
+    color: #ffc300; 
+    font-weight: 700;
+}
+.activity-box .math-box p {
+    font-family: monospace, 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 10px 0;
+}
+.steam-box i, .math-box i {
+    color: inherit; 
+    margin-right: 5px;
+}
+.content-box .content-image-small {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+/* Mengatur ukuran gambar di dalam image-grid agar seragam */
+.image-grid img {
+    width: 100%;
+    height: 180px; /* Tinggi seragam untuk grid kecil */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+#jenis-daratan .activity-box {
+    background-color: var(--bg-white);
+    border-left: 5px solid var(--accent-green); 
+}
+#jenis-perairan .image-grid div {
+    border: 1px solid var(--border-soft);
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f0faff; 
+    border-left: 5px solid var(--secondary); 
+}
+#jenis-perairan .image-grid h3 {
+    margin-top: 0;
+    color: var(--secondary);
+}
+
+/* Style khusus untuk kotak Art/Drawing */
+.activity-box.art-box {
+    background-color: #e6fffa;
+    border: 2px solid #14b8a6;
+    margin-top: 1.5rem;
+}
+.activity-box.art-box h3 {
+    color: #0d9488;
+}
+
+/* 9. RESPONSIVE (Tidak diubah) */
 @media (max-width: 900px) {
-    .sidebar {
-        width: 100%; height: auto;
-        top: 0; left: 0;
-        border-radius: 0;
-        flex-direction: row; 
-        padding: 1rem;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    .sidebar { transform: translateX(-100%); width: 250px; }
+    .main-content, footer { margin-left: 0; }
+    .main-header { display: flex; justify-content: flex-end; }
+    .back-link { display: none; }
+    .back-link-mobile {
+        display: block; color: var(--secondary); text-decoration: none;
+        font-weight: 500; padding: 10px;
     }
-    .sidebar .logo { margin-bottom: 0; font-size: 1.2em; }
-    .table-of-contents, .download-section { display: none; }
-    .back-link { margin: 0 0 0 auto;  }
-    
-    .main-content {
-        margin-left: 0; 
-        padding-top: 90px; 
-    }
-    .main-header { display: none; }
-    .back-link-mobile { 
-        display: block;
-        color: var(--secondary);
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .hero-section { flex-direction: column-reverse; padding: 40px 20px; text-align: center; }
-    .hero-content { text-align: center; }
-    .hero-illustration { width: 150px; margin-bottom: 20px; }
-    .hero-section h1 { font-size: 2.2em; }
-    .hero-section p { font-size: 1em; }
-    .content-box { padding: 2rem; margin: 1.5rem; }
+    .hero-section.hero-themed { margin: 10px; padding: 2rem; }
+    .hero-themed h1 { font-size: 2em; }
+    .content-box { padding: 1.5rem; margin: 1.5rem 10px; }
     .content-split { flex-direction: column; }
+    .content-split.reverse { flex-direction: column; }
     .image-content { max-width: 100%; margin-top: 1.5rem; }
-    .feature-grid { grid-template-columns: 1fr; }
 }
